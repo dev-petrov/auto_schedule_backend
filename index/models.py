@@ -3,16 +3,6 @@ from django.db import models
 
 class Discipline(models.Model):
 
-    TYPE_LECTION = 'L'
-    TYPE_PRACTICE = 'P'
-    TYPE_LAB = 'LB'
-
-    TYPES = [
-        (TYPE_LECTION, 'Лекция'),
-        (TYPE_PRACTICE, 'Практика'),
-        (TYPE_LAB, 'Лаб. работа'),
-    ]
-
     PROF_TYPE_SIMPLE = 'S'
     PROF_TYPE_COMP = 'C'
     PROF_TYPE_DESIGN = 'D'
@@ -28,7 +18,6 @@ class Discipline(models.Model):
     ]
 
     title = models.CharField(max_length=100)
-    type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
     prof_type = models.CharField(max_length=1, choices=PROF_TYPES, default=PROF_TYPE_SIMPLE)
     need_projector = models.BooleanField()
     need_big_blackboard = models.BooleanField()
@@ -88,6 +77,25 @@ class Group(models.Model):
     training_direction = models.ForeignKey(TrainingDirection, on_delete=models.PROTECT)
 
     flow = models.ForeignKey(Flow, on_delete=models.PROTECT)
+    constraints = models.TextField()
+
+
+class EducationPlan(models.Model):
+    TYPE_LECTION = 'L'
+    TYPE_PRACTICE = 'P'
+    TYPE_LAB = 'LB'
+
+    TYPES = [
+        (TYPE_LECTION, 'Лекция'),
+        (TYPE_PRACTICE, 'Практика'),
+        (TYPE_LAB, 'Лаб. работа'),
+    ]
+
+    discipline = models.ForeignKey(Discipline, on_delete=models.PROTECT)
+    group = models.ForeignKey(Group, on_delete=models.PROTECT)
+    type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
+
+    hours = models.IntegerField()
 
 
 class LectureHall(models.Model):
