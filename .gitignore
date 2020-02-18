@@ -1,3 +1,5 @@
 .vscode
 .env
 *.pyc
+db.sqlite3
+.venv
