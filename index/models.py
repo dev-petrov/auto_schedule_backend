@@ -1,5 +1,6 @@
 from django.db import models
-
+from index.defaults import default_day_constraints
+import json
 
 class Discipline(models.Model):
 
@@ -38,13 +39,24 @@ class Teacher(models.Model):
         (BUILD_PRYANIKI, 'ул. Прянишникова'),
         (BUILD_SADOVAYA, 'ул. Садовая-Спасская'),
     ]
+    def_constraints = {
+        'buildings_priority': [
+            BUILD_ELECTRO, 
+            BUILD_AUTAZ, 
+            BUILD_VDNH, 
+            BUILD_SADOVAYA, 
+            BUILD_PRYANIKI,
+        ],
+        'day_constraints': default_day_constraints,
+    }
 
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50)
     disciplines = models.ManyToManyField(Discipline)
-    constraints = models.TextField()
+    constraints = models.TextField(default=json.dumps(def_constraints))
     building = models.CharField(max_length=1, choices=BUILDINGS, default=BUILD_ELECTRO)
+    total_hours = models.IntegerField()
 
 
 class TrainingDirection(models.Model):
@@ -59,12 +71,16 @@ class TrainingDirection(models.Model):
         (TYPE_MAGISTRACY, 'Магистратура'),
     ]
 
+    def_constraints = [
+        Teacher.BUILD_ELECTRO, Teacher.BUILD_AUTAZ, Teacher.BUILD_PRYANIKI, Teacher.BUILD_VDNH, Teacher.BUILD_SADOVAYA,
+    ]
+
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=50)
 
     type = models.CharField(max_length=1, choices=TYPES, default=TYPE_BACHELOR)
 
-    constraints = models.TextField(verbose_name='Ограничения направления')
+    constraints = models.TextField(verbose_name='Ограничения направления', default=json.dumps(def_constraints))
 
 
 class Flow(models.Model):
@@ -77,7 +93,7 @@ class Group(models.Model):
     training_direction = models.ForeignKey(TrainingDirection, on_delete=models.PROTECT)
 
     flow = models.ForeignKey(Flow, on_delete=models.PROTECT)
-    constraints = models.TextField()
+    constraints = models.TextField(default=json.dumps(default_day_constraints))
 
 
 class EducationPlan(models.Model):
@@ -96,6 +112,7 @@ class EducationPlan(models.Model):
     type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
 
     hours = models.IntegerField()
+    constraints = models.TextField()
 
 
 class LectureHall(models.Model):
@@ -104,3 +121,21 @@ class LectureHall(models.Model):
     building = models.CharField(max_length=1, choices=Teacher.BUILDINGS, default=Teacher.BUILD_ELECTRO)
     prof_type = models.CharField(max_length=1, choices=Discipline.PROF_TYPES, default=Discipline.PROF_TYPE_SIMPLE)
     has_projector = models.BooleanField()
+    has_big_blackboard = models.BooleanField()
+
+
+class Lesson(models.Model):
+    LESSONS = [
+        (1, 'Первая пара'),
+        (2, 'Вторая пара'),
+        (3, 'Третья пара'),
+        (4, 'Четвёртая пара'),
+        (5, 'Пятая пара'),
+        (6, 'Шестая пара'),
+        (7, 'Седьмая пара'),
+    ]
+    discipline = models.ForeignKey(Discipline, on_delete=models.PROTECT)
+    group = models.ForeignKey(Group, on_delete=models.PROTECT)
+    teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
+    lecture_hall = models.ForeignKey(LectureHall, on_delete=models.PROTECT)
+    lesson = models.IntegerField(choices=LESSONS, default=1)
