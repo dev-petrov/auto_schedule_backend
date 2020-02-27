@@ -20,8 +20,8 @@ class Discipline(models.Model):
 
     title = models.CharField(max_length=100)
     prof_type = models.CharField(max_length=1, choices=PROF_TYPES, default=PROF_TYPE_SIMPLE)
-    need_projector = models.BooleanField()
-    need_big_blackboard = models.BooleanField()
+    need_projector = models.BooleanField(default=False)
+    need_big_blackboard = models.BooleanField(default=False)
 
 
 class Teacher(models.Model):
@@ -55,7 +55,6 @@ class Teacher(models.Model):
     middle_name = models.CharField(max_length=50)
     disciplines = models.ManyToManyField(Discipline)
     constraints = models.TextField(default=json.dumps(def_constraints))
-    building = models.CharField(max_length=1, choices=BUILDINGS, default=BUILD_ELECTRO)
     total_hours = models.IntegerField()
 
 
@@ -112,7 +111,7 @@ class EducationPlan(models.Model):
     type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
 
     hours = models.IntegerField()
-    constraints = models.TextField()
+    constraints = models.TextField(null=True)
 
 
 class LectureHall(models.Model):
@@ -120,8 +119,8 @@ class LectureHall(models.Model):
     code = models.CharField(max_length=10)
     building = models.CharField(max_length=1, choices=Teacher.BUILDINGS, default=Teacher.BUILD_ELECTRO)
     prof_type = models.CharField(max_length=1, choices=Discipline.PROF_TYPES, default=Discipline.PROF_TYPE_SIMPLE)
-    has_projector = models.BooleanField()
-    has_big_blackboard = models.BooleanField()
+    has_projector = models.BooleanField(default=False)
+    has_big_blackboard = models.BooleanField(default=False)
 
 
 class Lesson(models.Model):
@@ -134,7 +133,7 @@ class Lesson(models.Model):
         (6, 'Шестая пара'),
         (7, 'Седьмая пара'),
     ]
-    discipline = models.ForeignKey(Discipline, on_delete=models.PROTECT)
+    discipline = models.ForeignKey(EducationPlan, on_delete=models.PROTECT)
     group = models.ForeignKey(Group, on_delete=models.PROTECT)
     teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
     lecture_hall = models.ForeignKey(LectureHall, on_delete=models.PROTECT)
