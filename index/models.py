@@ -133,8 +133,18 @@ class Lesson(models.Model):
         (6, 'Шестая пара'),
         (7, 'Седьмая пара'),
     ]
+
+    DAY_OF_WEEK = [
+        (1, 'Понедельник'),
+        (2, 'Вторник'),
+        (3, 'Среда'),
+        (4, 'Четверг'),
+        (5, 'Пятница'),
+        (6, 'Суббота'),
+    ]
     discipline = models.ForeignKey(EducationPlan, on_delete=models.PROTECT)
     group = models.ForeignKey(Group, on_delete=models.PROTECT)
     teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
     lecture_hall = models.ForeignKey(LectureHall, on_delete=models.PROTECT)
     lesson = models.IntegerField(choices=LESSONS, default=1)
+    day_of_week = models.IntegerField(choices=DAY_OF_WEEK, default=1)
