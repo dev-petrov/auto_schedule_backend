@@ -2,6 +2,12 @@ from django.db import models
 from index.defaults import default_day_constraints
 import json
 
+
+class ConstraintCollection(models.Model):
+    projector = models.BooleanField(default=False)
+    big_blackboard = models.BooleanField(default=False)
+
+
 class Discipline(models.Model):
 
     PROF_TYPE_SIMPLE = 'S'
@@ -20,8 +26,7 @@ class Discipline(models.Model):
 
     title = models.CharField(max_length=100)
     prof_type = models.CharField(max_length=1, choices=PROF_TYPES, default=PROF_TYPE_SIMPLE)
-    need_projector = models.BooleanField(default=False)
-    need_big_blackboard = models.BooleanField(default=False)
+    constraints = models.ForeignKey(ConstraintCollection, on_delete=models.PROTECT)
 
 
 class Teacher(models.Model):
@@ -119,8 +124,7 @@ class LectureHall(models.Model):
     code = models.CharField(max_length=10)
     building = models.CharField(max_length=1, choices=Teacher.BUILDINGS, default=Teacher.BUILD_ELECTRO)
     prof_type = models.CharField(max_length=1, choices=Discipline.PROF_TYPES, default=Discipline.PROF_TYPE_SIMPLE)
-    has_projector = models.BooleanField(default=False)
-    has_big_blackboard = models.BooleanField(default=False)
+    constraints = models.ForeignKey(ConstraintCollection, on_delete=models.PROTECT)
 
 
 class Lesson(models.Model):
