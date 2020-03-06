@@ -1,4 +1,5 @@
 from index.models import *
+import json
 '''
 Модуль для заполнения базы данных тестовыми данными.
 
@@ -36,5 +37,26 @@ from index.models import *
 
 '''
 
-def main():
-    pass
+def Set_Diciplines():
+    objs = [
+        Discipline(title='Линейная алгебра', prof_type='S', need_projector=False, need_big_blackboard=True),
+        Discipline(title='Иностранный язык', prof_type='S', need_projector=False, need_big_blackboard=True),
+        Discipline(title='Безопасность жизнедеятельности', prof_type='S', need_projector=True, need_big_blackboard=False),
+        Discipline(title='Программирование мобильных приложений', prof_type='C', need_projector=True, need_big_blackboard=False),
+        Discipline(title='Теория вероятнотей', prof_type='S', need_projector=False, need_big_blackboard=True),
+        Discipline(title='Аналитика информационной безопасности', prof_type='S', need_projector=True, need_big_blackboard=False),
+        Discipline(title='Основы сетевых технологий', prof_type='C', need_projector=True, need_big_blackboard=False),
+        Discipline(title='Веб-разработка', prof_type='C', need_projector=True, need_big_blackboard=False),
+        Discipline(title='Физика', prof_type='S', need_projector=True, need_big_blackboard=True),
+        Discipline(title='Сопротивление материалов', prof_type='S', need_projector=False, need_big_blackboard=True),
+        Discipline(title='История исскувств', prof_type='S', need_projector=True, need_big_blackboard=False),
+        Discipline(title='Современный дизайн', prof_type='D', need_projector=True, need_big_blackboard=False),
+        Discipline(title='Работа на фрезеровочных станках', prof_type='M', need_projector=False, need_big_blackboard=False),
+    ]
+
+    Discipline.objects.bulk_create(objs)
+
+def Set_Teachers():
+    
+    Teacher.objects.create(first_name='Васильев', last_name='', middle_name='', constrins=json.dumps(), total_hours=4)
+    
