@@ -4,6 +4,8 @@ import json
 
 
 class ConstraintCollection(models.Model):
+    class Meta:
+        unique_together = ['projector', 'big_blackboard']
     projector = models.BooleanField(default=False)
     big_blackboard = models.BooleanField(default=False)
 
