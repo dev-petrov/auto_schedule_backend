@@ -1,5 +1,7 @@
 from index.models import *
 import json
+import random
+import codecs
 '''
 Модуль для заполнения базы данных тестовыми данными.
 
@@ -31,32 +33,64 @@ import json
     Ограничения пока не продуманы, оставить поле пустым
 
 Аудитории:
-    Необходимо создать аудитории с небольшим избытком (учитывая потребность 
+    Необходимо создать аудитории с небольшим избытком (учитывая потребность
     в проф аудитории, проекторе, большой доске)
 
 
 '''
+path = 'scripts/data.json'
 
-def Set_Diciplines():
-    objs = [
-        Discipline(title='Линейная алгебра', prof_type='S', need_projector=False, need_big_blackboard=True),
-        Discipline(title='Иностранный язык', prof_type='S', need_projector=False, need_big_blackboard=True),
-        Discipline(title='Безопасность жизнедеятельности', prof_type='S', need_projector=True, need_big_blackboard=False),
-        Discipline(title='Программирование мобильных приложений', prof_type='C', need_projector=True, need_big_blackboard=False),
-        Discipline(title='Теория вероятнотей', prof_type='S', need_projector=False, need_big_blackboard=True),
-        Discipline(title='Аналитика информационной безопасности', prof_type='S', need_projector=True, need_big_blackboard=False),
-        Discipline(title='Основы сетевых технологий', prof_type='C', need_projector=True, need_big_blackboard=False),
-        Discipline(title='Веб-разработка', prof_type='C', need_projector=True, need_big_blackboard=False),
-        Discipline(title='Физика', prof_type='S', need_projector=True, need_big_blackboard=True),
-        Discipline(title='Сопротивление материалов', prof_type='S', need_projector=False, need_big_blackboard=True),
-        Discipline(title='История исскувств', prof_type='S', need_projector=True, need_big_blackboard=False),
-        Discipline(title='Современный дизайн', prof_type='D', need_projector=True, need_big_blackboard=False),
-        Discipline(title='Работа на фрезеровочных станках', prof_type='M', need_projector=False, need_big_blackboard=False),
-    ]
 
-    Discipline.objects.bulk_create(objs)
+def Set_Disciplines():
+    with codecs.open(path, 'r', 'utf_8_sig') as f:
+        data = json.loads(f.read())
+        for d in data['Discipline']:
+            Discipline.objects.create(title=d['title'], prof_type=d['prof_type'],
+             need_projector=d['need_projector'], need_big_blackboard=d['need_big_blackboard'])
+
 
 def Set_Teachers():
-    
-    Teacher.objects.create(first_name='Васильев', last_name='', middle_name='', constrins=json.dumps(), total_hours=4)
-    
+    with codecs.open(path, 'r', 'utf_8_sig') as f:
+        data = json.loads(f.read())
+        for d in data['Teacher']:
+            teacher = Teacher.objects.create(first_name=d['first_name'], last_name=d['last_name'],
+             middle_name=d['middle_name'], constraints=json.dumps(d['constraints']), total_hours=d['total_hours'])
+            teacher.disciplines.add(Discipline.objects.first())#Need's to be discussed
+
+def Set_TrainingDirections():
+    with codecs.open(path, 'r', 'utf_8_sig') as f:
+        data = json.loads(f.read())
+        for d in data['TrainingDirection']:
+            TrainingDirection.objects.create(code=d['code'], name=d['name'],
+             type=d['type'], constraints=d['constraints'])### constaints???
+
+def Set_Flows():
+    with codecs.open(path, 'r', 'utf_8_sig') as f:
+        data = json.loads(f.read())
+        for d in data['Flow']:
+            Flow.objects.create(name=d['name'])
+
+def Set_Groups():
+    with codecs.open(path, 'r', 'utf_8_sig') as f:
+        data = json.loads(f.read())
+        for d in data['Group']:
+            group = Group.objects.create(code=d['code'], count_of_students=d['count_of_students'],
+             constraints=d['constraints'])
+            group.flow = Flow.objects.first()#### Foreign key in a cycle??
+
+def Set_EducationPlans():
+    with codecs.open(path, 'r', 'utf_8_sig') as f:
+        data = json.loads(f.read())
+        for d in data['EducationPlan']:
+            educationPlan = EducationPlan.objects.create(type=d['type'], hours=d['hours'],
+             constraints=d['constraints'])
+            educationPlan.discipline = Discipline.objects.first()#### Foreign key in a cycle??
+            educationPlan.group = Group.objects.first()#### Foreign key in a cycle??
+
+def Set_LectureHalls():
+    with codecs.open(path, 'r', 'utf_8_sig') as f:
+        data = json.loads(f.read())
+        for d in data['LectureHall']:
+            LectureHall.objects.create(spaciousness=d['spaciousness'], code=d['code'],
+             building=d['building'], prof_type=d['prof_type'],
+             has_projector=d['has_projector'], has_big_blackboard=d['has_big_blackboard'])
