@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="/static/style.css"> -->
+		<title>{% block title %}Работа{% endblock %}</title>
+	</head>
+	<body >	
+		<!-- <nav class="navbar navbar-expand-md  fixed-top " style="background-color: orange;">
+			<a href="/boot"><img src="/lol/ban.png" class=" navbar-brand px-3 hover" alt="banan"></a>
+			
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item ">
+						<a class="nav-link"   href="#">Home </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link " href="#">Disabled</a>
+					</li>
+				</ul>
+				<a class="btn btn-primary" href="/logout">Выйти</a>
+			</div>
+		</nav>  <br><br><br>-->
+
+		<div class="d-flex flex-column bg-dark 
+		flex-md-row align-items-center px-md-4 mb-3 border-bottom shadow-sm"  >
+
+			
+			<nav class="navbar navbar-expand-lg  mr-md-auto ">
+				<a class="nav-link text-white" href="/">Главная</a>
+				<a class="nav-link text-white" href="/team">Участники</a>
+				<a class="nav-link text-white" href="/blog">Блог</a>
+				<a class="nav-link text-white" href="https://github.com/Anton250/auto_schedule_frontend">
+					Репозиторий клиентской части</a>
+				<a class="nav-link text-white" href="https://github.com/Anton250/auto_schedule_backend">
+					Репозиторий серверной части</a>
+				<a class="nav-link text-white" href="https://drive.google.com/file/d/12ZVo4QNR7b7aZPPtVH5F8yXBAenBjxRK/view?usp=sharing">
+					Незаконченная презентация</a>
+				
+			</nav>
+		</div>
+		
+		<div class="container">		
+			<div class="jumbotron text-center" >
+					<h1 class="font-italic">
+						{% block head %}
+							Тестируем что я могу
+						{% endblock %}
+					</h1>
+			</div>
+
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% for category, msg in messages%}
+				<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+					{{ msg }}
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				{% endfor %}
+			{% endwith%}
+
+			<div class="pt-4 blog-main">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+ 
+		<br><br>
+		<footer class="footer fixed-bottom bg-dark">
+			<p class="pl-5 float-left text-white">Веб-приложение для автоматического составления расписания для ВУЗа</p>
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	</body>
+</html>
