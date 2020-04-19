@@ -40,6 +40,14 @@ import codecs
 '''
 path = 'scripts/data.json'
 
+def Main():
+    Set_Disciplines()
+    Set_EducationPlans()
+    Set_Flows()
+    Set_Groups()
+    Set_LectureHalls()
+    Set_Teachers()
+    Set_TrainingDirections()
 
 def Set_Disciplines():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
