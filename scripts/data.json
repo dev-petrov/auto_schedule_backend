@@ -1,0 +1,524 @@
+{
+    "Discipline": [
+        {
+            "title": "Линейная алгебра",
+            "prof_type": "S",
+            "need_projector": "False",
+            "need_big_blackboard": "True"
+        },
+        {
+            "title": "Иностранный язык", 
+            "prof_type": "S",
+            "need_projector": "False",
+            "need_big_blackboard": "True"
+        },
+        {
+            "title": "Безопасность жизнедеятельности", 
+            "prof_type": "S",
+            "need_projector": "True", 
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Программирование мобильных приложений",
+            "prof_type": "C",
+            "need_projector": "True", 
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Теория вероятнотей",
+            "prof_type": "S",
+            "need_projector": "False",
+            "need_big_blackboard": "True"
+        },
+        {
+            "title": "Аналитика информационной безопасности", 
+            "prof_type": "S",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Основы сетевых технологий", 
+            "prof_type": "C",
+            "need_projector": "True", 
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Веб-разработка", 
+            "prof_type": "C",
+            "need_projector": "True", 
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Физика",
+            "prof_type": "S",
+            "need_projector": "True", 
+            "need_big_blackboard": "True"
+        },
+        {
+            "title": "Сопротивление материалов", 
+            "prof_type": "S",
+            "need_projector": "False",
+            "need_big_blackboard": "True"
+        },
+        {
+            "title": "История исскувств",
+            "prof_type": "S",
+            "need_projector": "True", 
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Современный дизайн", 
+            "prof_type": "D",
+            "need_projector": "True", 
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Работа на фрезеровочных станках",
+            "prof_type": "M",
+            "need_projector": "False",
+            "need_big_blackboard": "False"
+        }
+    ],
+    "Teacher": [
+        {
+            "first_name": "Васильев",
+            "last_name": "Васильев",
+            "middle_name": "Борисович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, true, false, true, false, false], 
+                    "WE": [true, false, false, true, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "12"
+        },
+        {
+            "first_name": "Глеб",
+            "last_name": "Гончаренко",
+            "middle_name": "Юрьевич",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, true, false, true, false, false], 
+                    "WE": [true, false, false, true, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "20"
+        },
+        {
+            "first_name": "Максим",
+            "last_name": "Репин",
+            "middle_name": "Михайлович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, true, false, true, false, false], 
+                    "WE": [true, false, false, true, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "14"
+        },
+        {
+            "first_name": "Екатерина",
+            "last_name": "Баутина",
+            "middle_name": "Николаевна",
+            "constraints": {
+                "buildings_priority": ["P", "S", "A", "E", "V"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, true, false, true, false, false], 
+                    "WE": [true, false, false, true, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "20"
+        },
+        {
+            "first_name": "Ефим",
+            "last_name": "Коган",
+            "middle_name": "Александрович",
+            "constraints": {
+                "buildings_priority": ["A", "E", "P", "S", "V"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, false, true, true, true, false], 
+                    "WE": [true, false, true, false, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, false, true, false, true]
+                }
+            },
+            "total_hours": "18"
+        }
+    ],
+    "TrainingDirection": [
+        {
+            "code": "09.01.01",
+            "name": "Прикладная информатика",
+            "type": "B",
+            "constraints": ["E", "A", "P", "S", "V"]
+        },
+        {
+            "code": "10.03.01",
+            "name": "Информационная безопасность",
+            "type": "B",
+            "constraints": ["V", "P", "A", "S", "E"]
+        },
+        {
+            "code": "10.03.02",
+            "name": "Информационная безопасность",
+            "type": "S",
+            "constraints": ["E", "S", "P", "A", "V"]
+        },
+        {
+            "code": "11.03.01",
+            "name": "Веб-разработка",
+            "type": "B",
+            "constraints": ["S", "A", "P", "E", "V"]
+        },
+        {
+            "code": "45.03.02",
+            "name": "Лингвистика",
+            "type": "B",
+            "constraints": ["E", "A", "P", "S", "V"]
+        },
+        {
+            "code": "15.04.03",
+            "name": "Прикладная механика",
+            "type": "M",
+            "constraints": ["A", "E", "P", "V", "S"]
+        }
+    ],
+    "Flow": [
+        {
+            "name":"Информационная безопасность"
+        },
+        {
+            "name":"Веб-разработка"
+        }
+    ],
+    "Group": [
+        {
+            "code": "181-351",
+            "count_of_students": "15",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "181-352",
+            "count_of_students": "30",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "181-331",
+            "count_of_students": "24",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "191-351",
+            "count_of_students": "18",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "191-352",
+            "count_of_students": "22",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "191-331",
+            "count_of_students": "25",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "181-361",
+            "count_of_students": "15",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "181-362",
+            "count_of_students": "17",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "171-351",
+            "count_of_students": "15",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "171-352",
+            "count_of_students": "15",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "171-331",
+            "count_of_students": "15",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "161-361",
+            "count_of_students": "12",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "161-362",
+            "count_of_students": "14",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "171-361",
+            "count_of_students": "11",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        },
+        {
+            "code": "171-362",
+            "count_of_students": "16",
+            "constraints": {
+                "MO": [true, false, true, true, true, false, true], 
+                "TU": [true, true, false, true, true, true, false], 
+                "WE": [true, false, true, false, true, true, true], 
+                "TH": [true, false, true, true, false, true, false], 
+                "FR": [true, true, false, true, true, true, true], 
+                "SA": [true, false, true, false, true, false, true]
+            }
+        }
+    ],
+    "EducationPlan": [
+        {
+            "type": "L",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "P",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "L",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "P",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "L",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "P",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "LB",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "L",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "P",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "L",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "P",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "L",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "L",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "P",
+            "hours": "20",
+            "constraints": []
+        },
+        {
+            "type": "LB",
+            "hours": "20",
+            "constraints": []
+        }
+    ],
+    "LectureHall": [
+        {
+            "spaciousness": "144",
+            "code": "H205",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "200",
+            "code": "H405",
+            "building": "E",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "174",
+            "code": "4205",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "200",
+            "code": "H105",
+            "building": "E",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "154",
+            "code": "Б205",
+            "building": "E",
+            "prof_type": "D",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "ПК144",
+            "code": "205",
+            "building": "V",
+            "prof_type": "L",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        }
+    ]
+}
