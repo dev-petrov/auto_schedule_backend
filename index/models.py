@@ -77,9 +77,16 @@ class TrainingDirection(models.Model):
         (TYPE_MAGISTRACY, 'Магистратура'),
     ]
 
-    def_constraints = [
-        Teacher.BUILD_ELECTRO, Teacher.BUILD_AUTAZ, Teacher.BUILD_PRYANIKI, Teacher.BUILD_VDNH, Teacher.BUILD_SADOVAYA,
-    ]
+    def_constraints = {
+        'buildings':[
+            Teacher.BUILD_ELECTRO, 
+            Teacher.BUILD_AUTAZ, 
+            Teacher.BUILD_PRYANIKI, 
+            Teacher.BUILD_VDNH, 
+            Teacher.BUILD_SADOVAYA,
+        ],
+        'day_constraints': default_day_constraints,
+    }
 
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=50)
