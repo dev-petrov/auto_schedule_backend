@@ -98,8 +98,8 @@
             "total_hours": "12"
         },
         {
-            "first_name": "Глеб",
-            "last_name": "Гончаренко",
+            "first_name": "Эмиль",
+            "last_name": "Сибигатуллин",
             "middle_name": "Юрьевич",
             "constraints": {
                 "buildings_priority": ["E", "A", "P", "S", "V"],
@@ -513,8 +513,8 @@
             "has_big_blackboard": "False"
         },
         {
-            "spaciousness": "ПК144",
-            "code": "205",
+            "spaciousness": "205",
+            "code": "ПК144",
             "building": "V",
             "prof_type": "L",
             "has_projector": "False",
