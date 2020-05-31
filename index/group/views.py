@@ -32,6 +32,89 @@ class GroupFilter(FilterSet):
 
 
 class GroupViewSet(viewsets.ModelViewSet):
+    '''
+    GET: /api/group/
+    :params
+        code: string
+        min_count_of_students: int
+        max_count_of_students: int
+        flow: flow_id
+
+    :code
+        200
+
+    :returns
+        [
+            {
+                "id": 1,
+                "constraints": "{'MO': [True, False, True, True, True, False, True], 'TU': [True, True, False, True, True, True, False], 'WE': [True, False, True, False, True, True, True], 'TH': [True, False, True, True, False, True, False], 'FR': [True, True, False, True, True, True, True], 'SA': [True, False, True, False, True, False, True]}",
+                "flow": {
+                    "id": 2,
+                    "name": "Веб-разработка"
+                },
+                "code": "181-351",
+                "count_of_students": 15,
+                "training_direction": 1
+            },
+            ...
+        ]
+
+    GET: /api/group/1/
+    
+    :code
+        200
+
+    :returns
+        {
+            "id": 1,
+            "constraints": "{'MO': [True, False, True, True, True, False, True], 'TU': [True, True, False, True, True, True, False], 'WE': [True, False, True, False, True, True, True], 'TH': [True, False, True, True, False, True, False], 'FR': [True, True, False, True, True, True, True], 'SA': [True, False, True, False, True, False, True]}",
+            "flow": {
+                "id": 2,
+                "name": "Веб-разработка"
+            },
+            "code": "181-351",
+            "count_of_students": 15,
+            "training_direction": 1
+        }
+
+    POST: /api/group/
+.................................................................................................
+    :params
+        code: string, required=True
+        min_count_of_students: int, required=True
+        max_count_of_students: int, required=True
+        flow: flow_id, required=True
+    
+    :code
+        201
+    
+    :returns
+        /////////////////
+        ??????????????????
+        /////////////////
+
+
+    PUT: /api/group/1/
+    :params
+        code: string, required=True
+        min_count_of_students: int, required=True
+        max_count_of_students: int, required=True
+        flow: flow_id, required=True
+
+    :code
+        200
+    
+    :returns
+        //////////////////
+        ??????????????????
+        //////////////////
+
+    DELETE: /api/group/1/
+
+    :code
+        204
+
+    '''
     queryset = Group.objects.all()  
     serializer_class = GroupSerializer
     filterset_class = GroupFilter 

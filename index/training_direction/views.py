@@ -26,6 +26,91 @@ class TrainingDirectionFilter(FilterSet):
 
         
 class TrainingDirectionViewSet(viewsets.ModelViewSet):
+    '''
+    GET: /api/training_direction/
+    :params
+        code: string (номер направления)
+        name: string (название напрвления)
+        type:
+            'B': Бакалавриат
+            'S': Специалитет
+            'M': Магистратура
+
+    :code
+        200
+
+    :returns
+        [
+            {
+                "id": 1,
+                "constraints": "['E', 'A', 'P', 'S', 'V']",
+                "code": "09.01.01",
+                "name": "Прикладная информатика",
+                "type": "B"
+            },
+            ...
+        ]
+
+    GET: /api/training_direction/1/
+    
+    :code
+        200
+
+    :returns
+        {
+            "id": 1,
+            "constraints": "['E', 'A', 'P', 'S', 'V']",
+            "code": "09.01.01",
+            "name": "Прикладная информатика",
+            "type": "B"
+        }
+
+    POST: /api/training_direction/
+
+    :params
+        constraints: JSON
+        code: string (номер направления), required=True
+        name: string (название напрвления), required=True
+        type: (как в GET), required=True
+    
+    :code
+        201
+    
+    :returns
+        {
+            "id": 7,
+            "constraints": {},
+            "code": "1",
+            "name": "ss",
+            "type": "B"
+        }
+
+
+    PUT: /api/training_direction/1/
+    :params
+        constraints: JSON
+        code: string (номер направления), required=True
+        name: string (название напрвления), required=True
+        type:(как в GET), required=True
+
+    :code
+        200
+    
+    :returns
+        {
+            "id": 1,
+            "constraints": {},
+            "code": "1",
+            "name": "qw",
+            "type": "B"
+        }
+
+    DELETE: /api/training_direction/1/
+
+    :code
+        204
+
+    '''
     queryset = TrainingDirection.objects.all()  
     serializer_class = TrainingDirectionSerializer 
     filterset_class = TrainingDirectionFilter
