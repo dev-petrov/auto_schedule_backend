@@ -1,7 +1,9 @@
-from index.models import Teacher, Discipline
+from index.models import Teacher, Discipline, TeacherDetails
 from index.discipline.views import DisciplineSerializer
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
+from django_filters.rest_framework import FilterSet, CharFilter
+
 
 class TeacherSerializer(serializers.ModelSerializer):
     disciplines = DisciplineSerializer(many=True, read_only=True)
@@ -12,9 +14,25 @@ class TeacherSerializer(serializers.ModelSerializer):
         model = Teacher
         fields = ['first_name', 'last_name', 'middle_name', 'disciplines', 'constraints', 'total_hours', 'disciplines_ids']
 
+
+class TeacherFilter(FilterSet):
+    first_name = CharFilter(field_name='first_name', lookup_expr='icontains')
+    last_name = CharFilter(field_name='last_name', lookup_expr='icontains')
+    middle_name = CharFilter(field_name='middle_name', lookup_expr='icontains')
+    
+    class Meta:
+        model = Teacher
+        fields = {
+            'first_name':['exact'],
+            'last_name': ['exact'],
+            'middle_name': ['exact'],
+            'disciplines': ['exact', 'in'],
+        }
+
         
 class TeacherViewSet(viewsets.ModelViewSet):
-    queryset = Teacher.objects.prefetch_related('disciplines').all()
+    queryset = Teacher.objects.all()
+    filterset_class = TeacherFilter
 
     def create(self, request):
         data = TeacherSerializer(data=request.data)
@@ -27,8 +45,13 @@ class TeacherViewSet(viewsets.ModelViewSet):
 
         teacher = data.instance
 
-        for discipline in Discipline.objects.filter(id__in=disciplines_ids):
-            teacher.disciplines.add(discipline)
+        details = [
+            TeacherDetails(teacher=teacher,
+            discipline_id=discipline_id)
+            for discipline_id in disciplines_ids
+        ]
+
+        TeacherDetails.objects.bulk_create(details)
 
         return Response(TeacherSerializer(instance=teacher).data)
 
@@ -44,17 +67,14 @@ class TeacherViewSet(viewsets.ModelViewSet):
 
         data.save()
 
-        teacher_disciplines = list(teacher.objects.disciplines.all())
+        teacher.details.all().delete()
 
-        for discipline in teacher_disciplines:
-            if discipline.id not in disciplines_ids:
-                 teacher.objects.disciplines.remove(discipline)
+        details = [
+            TeacherDetails(teacher=teacher,
+            discipline_id=discipline_id)
+            for discipline_id in disciplines_ids
+        ]
 
-        teacher_disciplines = list(teacher.objects.disciplines.all())
-
-        for discipline in Discipline.objects.filter(id__in=disciplines_ids):
-            if discipline not in teacher_disciplines:
-                teacher.disciplines.add(discipline)
+        TeacherDetails.objects.bulk_create(details)
 
         return Response(TeacherSerializer(instance=teacher).data)
-    
