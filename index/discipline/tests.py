@@ -3,11 +3,15 @@ from index.models import Discipline
 
 
 class TestDiscipline(MainTest):
+
+    url = '/api/discipline/'
+
     def setUp(self):
         super().setUp()
-        Discipline.objects.create()
+        
 
 
     def test_get_list(self):
-        pass
+        response = self.client.get(self.url)
+        print(response.json())
 

@@ -31,6 +31,7 @@ class TeacherFilter(FilterSet):
 
         
 class TeacherViewSet(viewsets.ModelViewSet):
+    serializer_class = TeacherSerializer
     queryset = Teacher.objects.all()
     filterset_class = TeacherFilter
 

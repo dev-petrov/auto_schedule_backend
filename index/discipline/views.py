@@ -36,4 +36,5 @@ class DisciplineFilter(FilterSet):
 
 class DisciplineViewSet(viewsets.ModelViewSet):
     queryset = Discipline.objects.all()
+    serializer_class = DisciplineSerializer
     filterset_class = DisciplineFilter

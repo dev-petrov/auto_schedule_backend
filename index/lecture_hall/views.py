@@ -40,5 +40,6 @@ class LectureHallFilter(FilterSet):
 
 
 class LectureHallViewSet(viewsets.ModelViewSet):
-    queryset = LectureHall.objects.all()   
+    queryset = LectureHall.objects.all()  
+    serializer_class = LectureHallSerializer 
     filterset_class = LectureHallFilter

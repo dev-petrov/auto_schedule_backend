@@ -33,4 +33,5 @@ class GroupFilter(FilterSet):
 
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()  
+    serializer_class = GroupSerializer
     filterset_class = GroupFilter 
