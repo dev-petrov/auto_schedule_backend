@@ -1,5 +1,5 @@
 from index.models import Teacher, Discipline
-from discipline.views import DisciplineSerializer
+from index.discipline.views import DisciplineSerializer
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
 
