@@ -53,9 +53,8 @@ def Set_Disciplines():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['Discipline']:
-            Discipline.objects.create(title=d['title'], prof_type=d['prof_type'],
-             need_projector=d['need_projector'], need_big_blackboard=d['need_big_blackboard'])
-
+            discipline = Discipline.objects.create(title=d['title'], prof_type=d['prof_type'])
+            discipline.constraints = ConstraintCollection.objects.first()#############
 
 def Set_Teachers():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
@@ -70,7 +69,7 @@ def Set_TrainingDirections():
         data = json.loads(f.read())
         for d in data['TrainingDirection']:
             TrainingDirection.objects.create(code=d['code'], name=d['name'],
-             type=d['type'], constraints=d['constraints'])### constaints???
+             type=d['type'], constraints=d['constraints'])### constraints???
 
 def Set_Flows():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
@@ -99,6 +98,9 @@ def Set_LectureHalls():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['LectureHall']:
-            LectureHall.objects.create(spaciousness=d['spaciousness'], code=d['code'],
+            lechall = LectureHall.objects.create(spaciousness=d['spaciousness'], code=d['code'],
              building=d['building'], prof_type=d['prof_type'],
              has_projector=d['has_projector'], has_big_blackboard=d['has_big_blackboard'])
+            lechall.constraints = ConstraintCollection.objects.first()
+
+Main()
