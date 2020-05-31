@@ -60,7 +60,7 @@ class Teacher(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50)
-    disciplines = models.ManyToManyField(Discipline)
+    disciplines = models.ManyToManyField(Discipline, through='TeacherDetails')
     constraints = models.TextField(default=json.dumps(def_constraints))
     total_hours = models.IntegerField()
 
@@ -161,3 +161,8 @@ class Lesson(models.Model):
     lecture_hall = models.ForeignKey(LectureHall, on_delete=models.PROTECT)
     lesson = models.IntegerField(choices=LESSONS, default=1)
     day_of_week = models.IntegerField(choices=DAY_OF_WEEK, default=1)
+
+
+class TeacherDetails(models.Model):
+    discipline = models.ForeignKey(Discipline, on_delete=models.PROTECT)
+    teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT, related_name='details')
