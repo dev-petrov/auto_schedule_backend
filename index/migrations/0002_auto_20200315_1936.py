@@ -3,6 +3,19 @@
 from django.db import migrations
 
 
+def create_constraints(apps, schema_editor):
+    ConstraintCollection = apps.get_model('index', 'ConstraintCollection')
+    constraints = [
+        ConstraintCollection(
+            projector=v1,
+            big_blackboard=v2,
+        )
+        for v1 in [True, False]
+        for v2 in [True, False]
+    ]
+    ConstraintCollection.objects.bulk_create(constraints)
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -14,4 +27,5 @@ class Migration(migrations.Migration):
             name='constraintcollection',
             unique_together={('projector', 'big_blackboard')},
         ),
+        migrations.RunPython(create_constraints),
     ]

@@ -2,10 +2,12 @@ from index.models import Group
 from index.serializers import FlowSerializer
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
+from index.serializers import FlowSerializer
+
 
 class GroupSerializer(serializers.ModelSerializer):
     constraints = serializers.JSONField()
-    flow = FlowSerialzer()
+    flow = FlowSerializer()
 
     class Meta:
         model = Group
