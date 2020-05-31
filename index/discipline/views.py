@@ -14,7 +14,7 @@ class DisciplineSerializer(serializers.ModelSerializer):
 
     def save(self, *args, **kwargs):
         need_projector = self.validated_data.pop('need_projector')
-        need_blackboard = self.validated_data.pop('need_blackboard')
+        need_blackboard = self.validated_data.pop('need_big_blackboard')
         constraints = ConstraintCollection.objects.get(
             projector=need_projector, 
             big_blackboard=need_blackboard
