@@ -2,6 +2,7 @@ from index.models import *
 import json
 import random
 import codecs
+from index.models import ConstraintCollection
 '''
 Модуль для заполнения базы данных тестовыми данными.
 
@@ -53,8 +54,9 @@ def Set_Disciplines():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['Discipline']:
-            discipline = Discipline.objects.create(title=d['title'], prof_type=d['prof_type'])
-            discipline.constraints = ConstraintCollection.objects.first()#############
+            Discipline.objects.create(title=d['title'], prof_type=d['prof_type'],
+            constraints=ConstraintCollection.objects.first())
+            #discipline.constraints = ConstraintCollection.objects.first()#############
 
 def Set_Teachers():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
@@ -81,26 +83,30 @@ def Set_Groups():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['Group']:
-            group = Group.objects.create(code=d['code'], count_of_students=d['count_of_students'],
-             constraints=d['constraints'])
-            group.flow = Flow.objects.first()#### Foreign key in a cycle??
+            Group.objects.create(code=d['code'], count_of_students=d['count_of_students'],
+             constraints=d['constraints'], flow=Flow.objects.first())
+            #group.flow = Flow.objects.first()#### Foreign key in a cycle??
 
 def Set_EducationPlans():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['EducationPlan']:
-            educationPlan = EducationPlan.objects.create(type=d['type'], hours=d['hours'],
-             constraints=d['constraints'])
-            educationPlan.discipline = Discipline.objects.first()#### Foreign key in a cycle??
-            educationPlan.group = Group.objects.first()#### Foreign key in a cycle??
+            EducationPlan.objects.create(type=d['type'], hours=d['hours'],
+             constraints=d['constraints'], discipline=Discipline.objects.first(), group=Group.objects.first())
+            #educationPlan.discipline = Discipline.objects.first()#### Foreign key in a cycle??
+            #educationPlan.group = Group.objects.first()#### Foreign key in a cycle??
 
 def Set_LectureHalls():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['LectureHall']:
-            lechall = LectureHall.objects.create(spaciousness=d['spaciousness'], code=d['code'],
+            LectureHall.objects.create(spaciousness=d['spaciousness'], code=d['code'],
              building=d['building'], prof_type=d['prof_type'],
-             has_projector=d['has_projector'], has_big_blackboard=d['has_big_blackboard'])
-            lechall.constraints = ConstraintCollection.objects.first()
+             constraints=ConstraintCollection.objects.first())
+            #lechall.constraints = ConstraintCollection.objects.first()
+
+def Test():
+    print(ConstraintCollection.objects.all())
 
 Main()
+ConstraintCollection.objects.all()
