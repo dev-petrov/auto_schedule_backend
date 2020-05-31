@@ -35,6 +35,105 @@ class DisciplineFilter(FilterSet):
 
 
 class DisciplineViewSet(viewsets.ModelViewSet):
+    """
+    GET: /api/discipline/
+    :params
+        title: string (название дисциплины)
+        prof_type: (тип дисциплины) допустимые значения 
+            'S': 'Простая'
+            'C': 'Компьютерная'
+            'D': 'Дизайн'
+            'L': 'Лаборатория'
+            'M': 'Мастерская'
+
+    :code
+        200
+
+    :returns
+        [
+            {
+                'id': 1, 
+                'constraints': {
+                    'id': 3, 
+                    'projector': False, 
+                    'big_blackboard': True
+                }, 
+                'title': 'Дисциплина4', 
+                'prof_type': 'C'
+            },
+            ...
+        ]
+
+    GET: /api/discipline/1/
+    
+    :code
+        200
+
+    :returns
+        {
+            'id': 1, 
+            'constraints': {
+                'id': 3, 
+                'projector': False, 
+                'big_blackboard': True
+            }, 
+            'title': 'Дисциплина4', 
+            'prof_type': 'C'
+        }
+
+    POST: /api/discipline/
+
+    :params
+        need_projector: bool, required=True
+        need_big_blackboard: bool, required=True
+        title: string, required=True
+        prof_type: string (как в GET), required=True
+    
+    :code
+        201
+    
+    :returns
+        {
+            'id': 2, 
+            'constraints': {
+                'id': 3, 
+                'projector': False, 
+                'big_blackboard': True
+            }, 
+            'title': 'Дисциплина2', 
+            'prof_type': 'S'
+        }
+
+
+    PUT: /api/discipline/1/
+    :params
+        need_projector: bool, required=True
+        need_big_blackboard: bool, required=True
+        title: string, required=True
+        prof_type: string (как в GET), required=True
+
+    :code
+        200
+    
+    :returns
+        {
+            'id': 2, 
+            'constraints': {
+                'id': 3, 
+                'projector': False, 
+                'big_blackboard': True
+            }, 
+            'title': 'Дисциплина2', 
+            'prof_type': 'S'
+        }
+
+    DELETE: /api/discipline/1/
+
+    :code
+        204
+
+    """
+
     queryset = Discipline.objects.all()
     serializer_class = DisciplineSerializer
     filterset_class = DisciplineFilter
