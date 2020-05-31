@@ -29,5 +29,6 @@ class EducationPlanFilter(FilterSet):
 
         
 class EducationPlanViewSet(viewsets.ModelViewSet):
-    queryset = EducationPlan.objects.all()   
+    queryset = EducationPlan.objects.all()
+    serializer_class = EducationPlanSerializer
     filterset_class = EducationPlanFilter

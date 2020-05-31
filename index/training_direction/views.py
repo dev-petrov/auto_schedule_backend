@@ -26,5 +26,6 @@ class TrainingDirectionFilter(FilterSet):
 
         
 class TrainingDirectionViewSet(viewsets.ModelViewSet):
-    queryset = TrainingDirection.objects.all()   
+    queryset = TrainingDirection.objects.all()  
+    serializer_class = TrainingDirectionSerializer 
     filterset_class = TrainingDirectionFilter

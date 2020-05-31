@@ -164,5 +164,9 @@ class Lesson(models.Model):
 
 
 class TeacherDetails(models.Model):
+
+    class Meta:
+        unique_together = ('discipline', 'teacher')
+
     discipline = models.ForeignKey(Discipline, on_delete=models.PROTECT)
     teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT, related_name='details')
