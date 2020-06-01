@@ -95,7 +95,8 @@
                     "SA": [true, false, true, true, true, false, true]
                 }
             },
-            "total_hours": "12"
+            "total_hours": "12",
+            "disciplines": ["Физика", "Веб-разработка"]
         },
         {
             "first_name": "Эмиль",
@@ -112,7 +113,8 @@
                     "SA": [true, false, true, true, true, false, true]
                 }
             },
-            "total_hours": "20"
+            "total_hours": "20",
+            "disciplines": ["Иностранный язык"]
         },
         {
             "first_name": "Максим",
@@ -129,7 +131,8 @@
                     "SA": [true, false, true, true, true, false, true]
                 }
             },
-            "total_hours": "14"
+            "total_hours": "14",
+            "disciplines": ["Физика", "Сопротивление материалов"]
         },
         {
             "first_name": "Екатерина",
@@ -146,7 +149,8 @@
                     "SA": [true, false, true, true, true, false, true]
                 }
             },
-            "total_hours": "20"
+            "total_hours": "20",
+            "disciplines": ["Основы сетевых технологий", "Аналитика информационной безопасности"]
         },
         {
             "first_name": "Ефим",
@@ -163,7 +167,8 @@
                     "SA": [true, false, true, false, true, false, true]
                 }
             },
-            "total_hours": "18"
+            "total_hours": "18",
+            "disciplines": ["Физика", "Теория вероятнотей"]
         }
     ],
     "TrainingDirection": [
@@ -223,7 +228,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Веб-разработка",
+            "direct": "09.01.01"
         },
         {
             "code": "181-352",
@@ -235,7 +242,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Веб-разработка",
+            "direct": "10.03.02"
         },
         {
             "code": "181-331",
@@ -247,7 +256,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Информационная безопасность",
+            "direct": "09.01.01"
         },
         {
             "code": "191-351",
@@ -259,7 +270,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Веб-разработка",
+            "direct": "10.03.01"
         },
         {
             "code": "191-352",
@@ -271,7 +284,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Информационная безопасность",
+            "direct": "10.03.02"
         },
         {
             "code": "191-331",
@@ -283,7 +298,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Информационная безопасность",
+            "direct": "09.01.01"
         },
         {
             "code": "181-361",
@@ -295,7 +312,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Веб-разработка",
+            "direct": "10.03.01"
         },
         {
             "code": "181-362",
@@ -307,7 +326,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Информационная безопасность",
+            "direct": "09.01.01"
         },
         {
             "code": "171-351",
@@ -319,7 +340,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Веб-разработка",
+            "direct": "09.01.01"
         },
         {
             "code": "171-352",
@@ -331,7 +354,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Веб-разработка",
+            "direct": "10.03.02"
         },
         {
             "code": "171-331",
@@ -343,7 +368,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Информационная безопасность",
+            "direct": "10.03.02"
         },
         {
             "code": "161-361",
@@ -355,7 +382,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Информационная безопасность",
+            "direct": "10.03.02"
         },
         {
             "code": "161-362",
@@ -367,7 +396,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Информационная безопасность",
+            "direct": "10.03.01"
         },
         {
             "code": "171-361",
@@ -379,7 +410,9 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Информационная безопасность",
+            "direct": "10.03.01"
         },
         {
             "code": "171-362",
@@ -391,84 +424,116 @@
                 "TH": [true, false, true, true, false, true, false], 
                 "FR": [true, true, false, true, true, true, true], 
                 "SA": [true, false, true, false, true, false, true]
-            }
+            },
+            "flow": "Веб-разработка",
+            "direct": "10.03.01"
         }
     ],
     "EducationPlan": [
         {
             "type": "L",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "P",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "L",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "P",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "L",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "P",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "LB",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "L",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "P",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "L",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "P",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "L",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "L",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "P",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         },
         {
             "type": "LB",
             "hours": "20",
-            "constraints": []
+            "constraints": [],
+            "discipline": "Физика",
+            "group": "181-351"
         }
     ],
     "LectureHall": [
