@@ -44,11 +44,12 @@ path = 'scripts/data.json'
 def main():
     set_disciplines()
     set_teachers()
-    set_trainingDirections()
+    set_training_directions()
     set_flows()
     set_groups()
-    set_educationPlans()
-    set_lectureHalls()
+    set_education_plans()
+    set_lecture_halls()
+    set_lessons()
 
 def set_disciplines():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
@@ -56,20 +57,19 @@ def set_disciplines():
         for d in data['Discipline']:
             Discipline.objects.create(title=d['title'], prof_type=d['prof_type'],
             constraints_id=random.randint(1,4))
-            #discipline.constraints = ConstraintCollection.objects.first()#############
+
 
 def set_teachers():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['Teacher']:
             teacher = Teacher.objects.create(first_name=d['first_name'], last_name=d['last_name'],
-             middle_name=d['middle_name'], constraints=json.dumps(d['constraints']), total_hours=d['total_hours'])
-            #teacher.disciplines.add(Discipline.objects.first())#Need's to be discussed
+             middle_name=d['middle_name'], constraints=d['constraints'], total_hours=d['total_hours'])
             for dis in d['disciplines']:
                 TeacherDetails.objects.create(teacher=teacher, discipline=Discipline.objects.filter(title=dis).first())
 
 
-def set_trainingDirections():
+def set_training_directions():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['TrainingDirection']:
@@ -92,18 +92,25 @@ def set_groups():
              training_direction=TrainingDirection.objects.filter(code=d['direct']).first())
             #group.flow = Flow.objects.first()#### Foreign key in a cycle??
 
-def set_educationPlans():
-    with codecs.open(path, 'r', 'utf_8_sig') as f:
-        data = json.loads(f.read())
-        for d in data['EducationPlan']:
-            EducationPlan.objects.create(type=d['type'], hours=d['hours'],
-             constraints=d['constraints'], 
-             discipline=Discipline.objects.filter(title=d['discipline']).first(),
-             group=Group.objects.filter(code=d['group']).first())
-            #educationPlan.discipline = Discipline.objects.first()#### Foreign key in a cycle??
-            #educationPlan.group = Group.objects.first()#### Foreign key in a cycle??
+def set_education_plans():
+    disciplines = list(Discipline.objects.all())
+    education_plans = []
+    for group in Group.objects.all():
+        for i in range(random.randint(5, 7)):
+            discipline = disciplines[random.randint(0, len(disciplines) - 1)]
+            education_plans.append(
+                EducationPlan(
+                    type=EducationPlan.TYPES[random.randint(0, len(EducationPlan.TYPES) - 1)][0],
+                    hours=random.randint(40, 80),
+                    constraints=[],
+                    discipline=discipline,
+                    group=group,
+                )
+            )
+    EducationPlan.objects.bulk_create(education_plans)
 
-def set_lectureHalls():
+
+def set_lecture_halls():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['LectureHall']:
@@ -112,5 +119,52 @@ def set_lectureHalls():
              constraints_id=random.randint(1,4))
             #lechall.constraints = ConstraintCollection.objects.first()
 
-#main()
-#ConstraintCollection.objects.all()
+
+def set_lessons():
+    education_plans = {}
+    lecture_halls = list(LectureHall.objects.all())
+    disciplines = {}
+    for discipline in Discipline.objects.all():
+        disciplines[discipline.id] = [
+            teacher
+            for teacher in discipline.teacher_set.all()
+        ]
+    for plan in list(EducationPlan.objects.all().select_related('group', 'discipline').order_by('group')):
+        key = plan.group_id
+        if key not in education_plans:
+            education_plans[key] = []
+        education_plans[key].append(
+            {
+                'plan':plan,
+                'lessons_in_week': round(plan.hours / (16 * 1.5)),
+                'teacher': disciplines[plan.discipline_id][random.randint(0, len(disciplines[plan.discipline_id]) - 1)],
+            }
+        )
+    lessons = []
+    for group in Group.objects.all():
+        education_plan = education_plans[group.id]
+        total_lessons = sum([x['lessons_in_week'] for x in education_plan])
+        days_to_study = random.randint(5, 6)
+        lessons_in_day = total_lessons / days_to_study
+        day = 1
+        les = 1
+        for plan in education_plan:
+            for i in range(plan['lessons_in_week']):
+                if day == days_to_study + 1:
+                    break
+                lessons.append(
+                    Lesson(
+                        group=group,
+                        teacher=plan['teacher'],
+                        lesson=les,
+                        day_of_week=day,
+                        discipline_id=plan['plan'].id,
+                        lecture_hall=lecture_halls[random.randint(0, len(lecture_halls) - 1)],
+                    )
+                )
+                les += 1
+                if (les > lessons_in_day):
+                    day += 1
+                    les = 1
+    Lesson.objects.bulk_create(lessons)
+            

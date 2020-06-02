@@ -7,8 +7,8 @@ from django_filters.rest_framework import FilterSet, CharFilter, NumberFilter
 
 class LectureHallSerializer(serializers.ModelSerializer):
     constraints = ConstraintCollectionSerializer(read_only=True)
-    has_projector = serializers.BooleanField()
-    has_big_blackboard = serializers.BooleanField()
+    has_projector = serializers.BooleanField(write_only=True)
+    has_big_blackboard = serializers.BooleanField(write_only=True)
 
     class Meta:
         model = LectureHall

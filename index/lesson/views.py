@@ -1,19 +1,46 @@
-from index.models import Lesson, Teacher, Group
+from index.models import Lesson, Teacher, Group, EducationPlan, LectureHall, Discipline
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
-from index.group.views import GroupSerializer
-from index.discipline.views import DisciplineSerializer
-from index.teacher.views import TeacherSerializer
-from index.lecture_hall.views import LectureHallSerializer
-from django.db.models import Q
+from django.db.models import Q, F
 from django_filters.rest_framework import FilterSet, CharFilter
 
-#rebuild
+
+class SpecTeacherSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Teacher
+        fields = ['id', 'first_name', 'last_name', 'middle_name']
+
+
+class SpecGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Group
+        fields = ['id', 'code']
+
+
+class SpecDisciplineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Discipline
+        fields = ['id', 'title']
+
+
+class SpecEducationPlanSerializer(serializers.ModelSerializer):
+    discipline = SpecDisciplineSerializer()
+    class Meta:
+        model = EducationPlan
+        fields = ['id', 'discipline', 'hours', 'type']
+
+
+class SpecLectureHallSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LectureHall
+        fields = ['id', 'code', 'building', 'prof_type']
+
+
 class LessonSerializer(serializers.ModelSerializer):
-    discipline = DisciplineSerializer(read_only=True)
-    group = GroupSerializer(read_only=True)
-    teacher = TeacherSerializer(read_only=True)
-    lecture_hall = LectureHallSerializer(read_only=True)
+    discipline = SpecEducationPlanSerializer(read_only=True)
+    group = SpecGroupSerializer(read_only=True)
+    teacher = SpecTeacherSerializer(read_only=True)
+    lecture_hall = SpecLectureHallSerializer(read_only=True)
     discipline_id = serializers.IntegerField(write_only=True)
     group_id = serializers.IntegerField(write_only=True)
     teacher_id = serializers.IntegerField(write_only=True)
@@ -52,9 +79,9 @@ class LessonViewSet(viewsets.ModelViewSet):
     filterset_class = LessonFilter
 
     def list(self, request):
-        query = self.filter_queryset(queryset)
+        query = self.filter_queryset(self.queryset).select_related('discipline', 'lecture_hall', 'teacher', 'group', 'discipline__discipline')
         if request.query_params.get('by_teacher', False):
-            lessons = list(query.select_related('discipline', 'lecture_hall').order_by('teacher_id', 'day_of_week', 'lesson'))
+            lessons = list(query.order_by('teacher_id', 'day_of_week', 'lesson'))
             data = {}
             for lesson in lessons:
                 key = lesson.teacher_id
@@ -63,5 +90,17 @@ class LessonViewSet(viewsets.ModelViewSet):
                 data[key].append(
                     LessonSerializer(lesson).data
                 )
+        elif request.query_params.get('by_group', False):
+            lessons = list(query.order_by('group_id', 'day_of_week', 'lesson'))
+            data = {}
+            for lesson in lessons:
+                key = lesson.group_id
+                if not key in data:
+                    data[key] = []
+                data[key].append(
+                    LessonSerializer(lesson).data
+                )
+        else:
+            data = LessonSerializer(query.order_by('group_id', 'day_of_week', 'lesson'), many=True).data
         return Response(data)
     
