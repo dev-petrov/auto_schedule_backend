@@ -8,7 +8,8 @@ from django_filters.rest_framework import FilterSet, CharFilter, NumberFilter
 
 class GroupSerializer(serializers.ModelSerializer):
     constraints = serializers.JSONField()
-    flow = FlowSerializer()
+    flow = FlowSerializer(read_only=True)
+    flow_id = serializers.IntegerField(write_only=True)
 
     class Meta:
         model = Group

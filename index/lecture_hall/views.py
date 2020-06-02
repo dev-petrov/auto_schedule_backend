@@ -6,7 +6,9 @@ from django_filters.rest_framework import FilterSet, CharFilter, NumberFilter
 
 
 class LectureHallSerializer(serializers.ModelSerializer):
-    constraints = ConstraintCollectionSerializer()
+    constraints = ConstraintCollectionSerializer(read_only=True)
+    has_projector = serializers.BooleanField()
+    has_big_blackboard = serializers.BooleanField()
 
     class Meta:
         model = LectureHall
@@ -14,7 +16,7 @@ class LectureHallSerializer(serializers.ModelSerializer):
 
     def save(self, *args, **kwargs):
         has_projector = self.validated_data.pop('has_projector')
-        has_blackboard = self.validated_data.pop('has_blackboard')
+        has_blackboard = self.validated_data.pop('has_big_blackboard')
         constraints = ConstraintCollection.objects.get(
             projector=has_projector, 
             big_blackboard=has_blackboard

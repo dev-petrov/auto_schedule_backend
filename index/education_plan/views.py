@@ -7,9 +7,10 @@ from django_filters.rest_framework import FilterSet, CharFilter
 
 
 class EducationPlanSerializer(serializers.ModelSerializer):
-    discipline = DisciplineSerializer()
-    group = GroupSerializer()
-
+    discipline = DisciplineSerializer(read_only=True)
+    group = GroupSerializer(read_only=True)
+    group_id = serializers.IntegerField(write_only=True)
+    discipline_id = serializers.IntegerField(write_only=True)
 
     class Meta:
         model = EducationPlan
