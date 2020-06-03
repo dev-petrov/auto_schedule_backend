@@ -1,4 +1,4 @@
-from index.models import LectureHall
+from index.models import LectureHall, ConstraintCollection
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
 from index.serializers import ConstraintCollectionSerializer

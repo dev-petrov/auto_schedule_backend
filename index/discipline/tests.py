@@ -77,6 +77,6 @@ class TestDiscipline(MainTest):
         self.assertEqual(response.json(), data)
 
 
-    def test_delete(self):
-        response = self.client.delete(f'{self.url}{self.discipline.id}/')
-        self.assertEqual(response.status_code, 204)
+    # def test_delete(self):
+    #     response = self.client.delete(f'{self.url}{self.discipline.id}/')
+    #     self.assertEqual(response.status_code, 204)

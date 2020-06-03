@@ -1,18 +1,18 @@
 from index.models import Teacher, Discipline, TeacherDetails
-from index.discipline.views import DisciplineSerializer
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
 from django_filters.rest_framework import FilterSet, CharFilter
+from index.lesson.views import SpecDisciplineSerializer
 
 
 class TeacherSerializer(serializers.ModelSerializer):
-    disciplines = DisciplineSerializer(many=True, read_only=True)
-    constraints = serializers.JSONField()
+    disciplines = SpecDisciplineSerializer(many=True, read_only=True)
+    constraints = serializers.JSONField(required=False)
     disciplines_ids = serializers.ListField(write_only=True)
 
     class Meta:
         model = Teacher
-        fields = ['first_name', 'last_name', 'middle_name', 'disciplines', 'constraints', 'total_hours', 'disciplines_ids']
+        fields = ['id', 'first_name', 'last_name', 'middle_name', 'disciplines', 'constraints', 'total_hours', 'disciplines_ids']
 
 
 class TeacherFilter(FilterSet):
@@ -54,7 +54,7 @@ class TeacherViewSet(viewsets.ModelViewSet):
 
         TeacherDetails.objects.bulk_create(details)
 
-        return Response(TeacherSerializer(instance=teacher).data)
+        return Response(TeacherSerializer(instance=teacher).data, status=201)
 
     
     def update(self, request, pk=None):

@@ -539,7 +539,7 @@
     "LectureHall": [
         {
             "spaciousness": "144",
-            "code": "H205",
+            "code": "Н205",
             "building": "E",
             "prof_type": "S",
             "has_projector": "True",
@@ -547,7 +547,7 @@
         },
         {
             "spaciousness": "200",
-            "code": "H405",
+            "code": "Н405",
             "building": "E",
             "prof_type": "C",
             "has_projector": "True",
@@ -563,7 +563,7 @@
         },
         {
             "spaciousness": "200",
-            "code": "H105",
+            "code": "Н105",
             "building": "E",
             "prof_type": "M",
             "has_projector": "False",

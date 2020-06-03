@@ -52,7 +52,7 @@ class LessonSerializer(serializers.ModelSerializer):
 
 
 class LessonFilter(FilterSet):
-    discipline = CharFilter(field_name='discipline', lookup_expr='title__icontains')
+    discipline = CharFilter(field_name='discipline', lookup_expr='discipline__title__icontains')
     group = CharFilter(field_name='group', lookup_expr='code__icontains')
     teacher = CharFilter(field_name='teacher', method='filter_teacher')
     lecture_hall = CharFilter(field_name='lecture_hall', lookup_expr='code__icontains')
@@ -61,7 +61,7 @@ class LessonFilter(FilterSet):
     def filter_teacher(self, queryset, name, value):
         
         return queryset.filter(
-            Q(first_name__icontains=value) | Q(last_name__icontains=value) | Q(middle_name__icontains=value)
+            Q(teacher__first_name__icontains=value) | Q(teacher__last_name__icontains=value) | Q(teacher__middle_name__icontains=value)
         )
     class Meta:
         model = Lesson

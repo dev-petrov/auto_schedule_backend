@@ -5,7 +5,7 @@ from django_filters.rest_framework import FilterSet, CharFilter
 
 
 class TrainingDirectionSerializer(serializers.ModelSerializer):
-    constraints = serializers.JSONField()
+    constraints = serializers.JSONField(required=False)
 
     class Meta:
         model = TrainingDirection

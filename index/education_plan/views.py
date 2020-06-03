@@ -1,14 +1,13 @@
 from index.models import EducationPlan
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
-from index.group.views import GroupSerializer
-from index.discipline.views import DisciplineSerializer
 from django_filters.rest_framework import FilterSet, CharFilter
+from index.lesson.views import SpecDisciplineSerializer, SpecGroupSerializer
 
 
 class EducationPlanSerializer(serializers.ModelSerializer):
-    discipline = DisciplineSerializer(read_only=True)
-    group = GroupSerializer(read_only=True)
+    discipline = SpecDisciplineSerializer(read_only=True)
+    group = SpecGroupSerializer(read_only=True)
     group_id = serializers.IntegerField(write_only=True)
     discipline_id = serializers.IntegerField(write_only=True)
 

@@ -107,7 +107,7 @@ class Group(models.Model):
     count_of_students = models.IntegerField()
     training_direction = models.ForeignKey(TrainingDirection, on_delete=models.PROTECT)
 
-    flow = models.ForeignKey(Flow, on_delete=models.PROTECT)
+    flow = models.ForeignKey(Flow, on_delete=models.PROTECT, null=True, blank=True)
     constraints = models.TextField(default=json.dumps(default_day_constraints))
 
 

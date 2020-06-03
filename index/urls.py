@@ -7,7 +7,7 @@ from index.lecture_hall.views import LectureHallViewSet
 from index.lesson.views import LessonViewSet
 from index.teacher.views import TeacherViewSet
 from index.training_direction.views import TrainingDirectionViewSet
-
+from index.flow.views import FlowViewSet
 
 router = routers.DefaultRouter()
 router.register(r'discipline', DisciplineViewSet, basename='Discipline')
@@ -17,6 +17,8 @@ router.register(r'lecture_hall', LectureHallViewSet, basename='LectureHall')
 router.register(r'lesson', LessonViewSet, basename='Lesson')
 router.register(r'teacher', TeacherViewSet, basename='Teacher')
 router.register(r'training_direction', TrainingDirectionViewSet, basename='TrainingDirection')
+router.register(r'flow', FlowViewSet, basename='Flow')
+
 
 
 urlpatterns = [

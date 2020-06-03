@@ -1,15 +1,17 @@
 from index.models import Group
-from index.serializers import FlowSerializer
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
-from index.serializers import FlowSerializer
+from index.flow.views import FlowSerializer
 from django_filters.rest_framework import FilterSet, CharFilter, NumberFilter
+from index.training_direction.views import TrainingDirectionSerializer
 
 
 class GroupSerializer(serializers.ModelSerializer):
-    constraints = serializers.JSONField()
+    constraints = serializers.JSONField(required=False)
     flow = FlowSerializer(read_only=True)
     flow_id = serializers.IntegerField(write_only=True)
+    training_direction = TrainingDirectionSerializer(read_only=True)
+    training_direction_id = serializers.IntegerField(write_only=True)
 
     class Meta:
         model = Group
