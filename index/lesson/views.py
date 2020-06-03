@@ -80,7 +80,8 @@ class LessonViewSet(viewsets.ModelViewSet):
 
     def list(self, request):
         query = self.filter_queryset(self.queryset).select_related('discipline', 'lecture_hall', 'teacher', 'group', 'discipline__discipline')
-        if request.query_params.get('by_teacher', False):
+        dtype = request.query_params.get('dtype', 'a')
+        if dtype.lower() == 't':
             lessons = list(query.order_by('teacher_id', 'day_of_week', 'lesson'))
             data = {}
             for lesson in lessons:
@@ -90,7 +91,7 @@ class LessonViewSet(viewsets.ModelViewSet):
                 data[key].append(
                     LessonSerializer(lesson).data
                 )
-        elif request.query_params.get('by_group', False):
+        elif dtype.lower() == 'g':
             lessons = list(query.order_by('group_id', 'day_of_week', 'lesson'))
             data = {}
             for lesson in lessons:
