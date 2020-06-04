@@ -3,6 +3,7 @@ import json
 import random
 import codecs
 from index.models import ConstraintCollection
+from django.contrib.auth.models import User
 '''
 Модуль для заполнения базы данных тестовыми данными.
 
@@ -50,6 +51,8 @@ def main():
     set_education_plans()
     set_lecture_halls()
     set_lessons()
+    User.objects.create_superuser('admin', email='admin@easytable.site', password='encrypted_pass')
+    print('Admin login: admin; admin pass: encrypted_pass')
 
 def set_disciplines():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
