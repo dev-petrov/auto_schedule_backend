@@ -96,7 +96,7 @@
                 }
             },
             "total_hours": "12",
-            "disciplines": ["Физика", "Веб-разработка", "Современный дизайн"]
+            "disciplines": ["Физика", "Веб-разработка", "Современный дизайн", "История исскувств"]
         },
         {
             "first_name": "Эмиль",
@@ -114,7 +114,7 @@
                 }
             },
             "total_hours": "20",
-            "disciplines": ["Программирование мобильных приложений", "Сопротивление материалов"]
+            "disciplines": ["Программирование мобильных приложений", "Сопротивление материалов", "История исскувств"]
         },
         {
             "first_name": "Максим",
@@ -132,7 +132,7 @@
                 }
             },
             "total_hours": "14",
-            "disciplines": ["Основы сетевых технологий", "Аналитика информационной безопасности"] 
+            "disciplines": ["Основы сетевых технологий", "Аналитика информационной безопасности", "Программирование мобильных приложений"] 
         },
         {
             "first_name": "Екатерина",
@@ -150,7 +150,8 @@
                 }
             },
             "total_hours": "20",
-            "disciplines": ["Иностранный язык", "Безопасность жизнедеятельности", "История исскувств"]
+            "disciplines": ["Иностранный язык", "Безопасность жизнедеятельности", 
+                "История исскувств", "Современный дизайн"]
         },
         {
             "first_name": "Ефим",
@@ -169,6 +170,79 @@
             },
             "total_hours": "18",
             "disciplines": ["Физика", "Теория вероятнотей", "Работа на фрезеровочных станках", "Линейная алгебра"]
+        },
+        {
+            "first_name": "Антон",
+            "last_name": "Недогарок",
+            "middle_name": "Александрович",
+            "constraints": {
+                "buildings_priority": ["P", "S", "A", "E", "V"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, true, false, true, false, false], 
+                    "WE": [true, false, false, true, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "22",
+            "disciplines": ["Программирование мобильных приложений", "Современный дизайн",
+                 "Аналитика информационной безопасности", "Основы сетевых технологий"]
+        },
+        {
+            "first_name": "Никита",
+            "last_name": "Шинган",
+            "middle_name": "Борисович",
+            "constraints": {
+                "buildings_priority": ["A", "S", "P", "V", "E"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, true, false, true, false, false], 
+                    "WE": [true, false, false, true, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "18",
+            "disciplines": ["Иностранный язык", "История исскувств", "Веб-разработка", "Работа на фрезеровочных станках"]
+        },
+        {
+            "first_name": "Антон",
+            "last_name": "Петров",
+            "middle_name": "Денисович",
+            "constraints": {
+                "buildings_priority": ["A", "S", "P", "V", "E"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, true, false, true, false, false], 
+                    "WE": [true, false, false, true, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "18",
+            "disciplines": ["Линейная алгебра", "Безопасность жизнедеятельности", "Теория вероятнотей", "Сопротивление материалов"]
+        },
+        {
+            "first_name": "Даниа",
+            "last_name": "Шмаков",
+            "middle_name": "Борисович",
+            "constraints": {
+                "buildings_priority": ["A", "S", "P", "V", "E"],
+                "day_constraints": {
+                    "MO": [true, false, true, true, true, false, true], 
+                    "TU": [true, true, true, false, true, false, false], 
+                    "WE": [true, false, false, true, true, true, true], 
+                    "TH": [true, false, true, true, false, true, false], 
+                    "FR": [true, true, false, true, true, true, true], 
+                    "SA": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "24",
+            "disciplines": ["Физика", "Теория вероятнотей", "Линейная алгебра", "Безопасность жизнедеятельности"]
         }
     ],
     "TrainingDirection": [
