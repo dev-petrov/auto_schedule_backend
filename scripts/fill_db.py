@@ -162,20 +162,19 @@ def set_lessons():
                 if lesson_check.filter(
                     lesson=les,
                 ).exists():
-                    les = lesson_check.oreder_by('lesson').last().lesson + 1
-                lessons.append(
-                    Lesson(
-                        group=group,
-                        teacher=plan['teacher'],
-                        lesson=les,
-                        day_of_week=day,
-                        discipline_id=plan['plan'].id,
-                        lecture_hall=lecture_halls[random.randint(0, len(lecture_halls) - 1)],
-                    )
+                    les = lesson_check.order_by('lesson').last().lesson + 1
+                
+                Lesson.objects.create(
+                    group=group,
+                    teacher=plan['teacher'],
+                    lesson=les,
+                    day_of_week=day,
+                    discipline_id=plan['plan'].id,
+                    lecture_hall=lecture_halls[random.randint(0, len(lecture_halls) - 1)],
                 )
                 les += 1
                 if (les > lessons_in_day):
                     day += 1
                     les = 1
-    Lesson.objects.bulk_create(lessons)
+    # Lesson.objects.bulk_create(lessons)
             
