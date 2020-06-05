@@ -155,6 +155,14 @@ def set_lessons():
             for i in range(plan['lessons_in_week']):
                 if day == days_to_study + 1:
                     break
+                lesson_check = Lesson.objects.filter(
+                    teacher=plan['teacher'],
+                    day_of_week=day,
+                )
+                if lesson_check.filter(
+                    lesson=les,
+                ).exists():
+                    les = lesson_check.oreder_by('lesson').last().lesson + 1
                 lessons.append(
                     Lesson(
                         group=group,
