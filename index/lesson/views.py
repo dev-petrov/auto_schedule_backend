@@ -59,16 +59,20 @@ class LessonFilter(FilterSet):
 
 
     def filter_teacher(self, queryset, name, value):
-        
-        return queryset.filter(
-            Q(teacher__first_name__icontains=value) | Q(teacher__last_name__icontains=value) | Q(teacher__middle_name__icontains=value)
-        )
+        values = value.split(',')
+        q = Q()
+        for val in values:
+            q |= Q(teacher__first_name__icontains=val)
+            q |= Q(teacher__last_name__icontains=val)
+            q |= Q(teacher__middle_name__icontains=val)
+        return queryset.filter(q)
+
     class Meta:
         model = Lesson
         fields = {
             'discipline':['exact'],
             'group': ['exact'],
-            'teacher': ['exact'],
+            'teacher': ['exact', 'in'],
             'lecture_hall': ['exact'],
         }
 

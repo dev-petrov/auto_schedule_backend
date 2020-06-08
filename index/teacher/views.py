@@ -3,6 +3,7 @@ from rest_framework import serializers, viewsets
 from rest_framework.response import Response
 from django_filters.rest_framework import FilterSet, CharFilter
 from index.lesson.views import SpecDisciplineSerializer
+from django.db.models import Q
 
 
 class TeacherSerializer(serializers.ModelSerializer):
@@ -16,17 +17,22 @@ class TeacherSerializer(serializers.ModelSerializer):
 
 
 class TeacherFilter(FilterSet):
-    first_name = CharFilter(field_name='first_name', lookup_expr='icontains')
-    last_name = CharFilter(field_name='last_name', lookup_expr='icontains')
-    middle_name = CharFilter(field_name='middle_name', lookup_expr='icontains')
+    name = CharFilter(field_name='first_name', method='filter_name')
     
+    def filter_name(self, queryset, name, value):
+        values = value.split(',')
+        q = Q()
+        for val in values:
+            q |= Q(first_name__icontains=val)
+            q |= Q(last_name__icontains=val)
+            q |= Q(middle_name__icontains=val)
+        return queryset.filter(q)
+
     class Meta:
         model = Teacher
         fields = {
-            'first_name':['exact'],
-            'last_name': ['exact'],
-            'middle_name': ['exact'],
-            'disciplines': ['exact', 'in'],
+            'name': ['exact',],
+            'disciplines': ['exact'],
         }
 
         
