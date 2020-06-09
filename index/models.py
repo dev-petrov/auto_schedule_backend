@@ -146,6 +146,11 @@ class LectureHall(models.Model):
 
 
 class Lesson(models.Model):
+    class Meta:
+        unique_together = [
+            ['teacher', 'lesson', 'day_of_week'],
+            ['group', 'lesson', 'day_of_week'],
+        ]
     LESSONS = [
         (1, 'Первая пара'),
         (2, 'Вторая пара'),

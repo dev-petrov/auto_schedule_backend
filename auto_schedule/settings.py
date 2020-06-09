@@ -40,11 +40,10 @@ INSTALLED_APPS = [
     'index',
     'rest_framework',
     'django_filters',
+    'rest_framework.authtoken',
+    'rest_auth',
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,6 +74,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'auto_schedule.wsgi.application'
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'index.authentication.SessionAuthentication',
+    ]
+}
 
 
 # Database
