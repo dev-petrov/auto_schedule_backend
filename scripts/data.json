@@ -612,51 +612,1603 @@
     ],
     "LectureHall": [
         {
-            "spaciousness": "144",
-            "code": "Н205",
-            "building": "E",
-            "prof_type": "S",
-            "has_projector": "True",
+            "spaciousness": "79",
+            "code": "ПК100",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
             "has_big_blackboard": "True"
         },
         {
-            "spaciousness": "200",
-            "code": "Н405",
-            "building": "E",
+            "spaciousness": "97",
+            "code": "ПК101",
+            "building": "V",
             "prof_type": "C",
             "has_projector": "True",
             "has_big_blackboard": "False"
         },
         {
-            "spaciousness": "174",
-            "code": "4205",
+            "spaciousness": "147",
+            "code": "ПК102",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "150",
+            "code": "ПК103",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "96",
+            "code": "ПК104",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "51",
+            "code": "ПК105",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "77",
+            "code": "ПК106",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "117",
+            "code": "ПК107",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "51",
+            "code": "ПК108",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "88",
+            "code": "ПК109",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "147",
+            "code": "ПК110",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "113",
+            "code": "ПК111",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "120",
+            "code": "ПК112",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "72",
+            "code": "ПК113",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "117",
+            "code": "ПК114",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "136",
+            "code": "ПК115",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "68",
+            "code": "ПК116",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "74",
+            "code": "ПК117",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "137",
+            "code": "ПК118",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "121",
+            "code": "ПК119",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "113",
+            "code": "ПК120",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "107",
+            "code": "ПК121",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "100",
+            "code": "ПК122",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "71",
+            "code": "ПК123",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "82",
+            "code": "ПК124",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "60",
+            "code": "ПК125",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "121",
+            "code": "ПК126",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "104",
+            "code": "ПК127",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "119",
+            "code": "ПК128",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "112",
+            "code": "ПК129",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "76",
+            "code": "ПК130",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "84",
+            "code": "ПК131",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "111",
+            "code": "ПК132",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "125",
+            "code": "ПК133",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "80",
+            "code": "ПК134",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "129",
+            "code": "ПК135",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "144",
+            "code": "ПК136",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "114",
+            "code": "ПК137",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "62",
+            "code": "ПК138",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "74",
+            "code": "ПК139",
+            "building": "V",
+            "prof_type": "C",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "72",
+            "code": "ПК140",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "81",
+            "code": "ПК141",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "117",
+            "code": "ПК142",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "55",
+            "code": "ПК143",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "139",
+            "code": "ПК144",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "113",
+            "code": "ПК145",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "130",
+            "code": "ПК146",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "67",
+            "code": "ПК147",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "118",
+            "code": "ПК148",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "56",
+            "code": "ПК149",
+            "building": "V",
+            "prof_type": "D",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "61",
+            "code": "4150",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "50",
+            "code": "4151",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "105",
+            "code": "4152",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "129",
+            "code": "4153",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "135",
+            "code": "4154",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "144",
+            "code": "4155",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "69",
+            "code": "4156",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "65",
+            "code": "4157",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "81",
+            "code": "4158",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "114",
+            "code": "4159",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "70",
+            "code": "4160",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "128",
+            "code": "4161",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "142",
+            "code": "4162",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "116",
+            "code": "4163",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "66",
+            "code": "4164",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "148",
+            "code": "4165",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "106",
+            "code": "4166",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "105",
+            "code": "4167",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "116",
+            "code": "4168",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "130",
+            "code": "4169",
+            "building": "A",
+            "prof_type": "M",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "126",
+            "code": "4170",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "137",
+            "code": "4171",
             "building": "A",
             "prof_type": "S",
             "has_projector": "True",
             "has_big_blackboard": "False"
         },
         {
-            "spaciousness": "200",
-            "code": "Н105",
-            "building": "E",
-            "prof_type": "M",
-            "has_projector": "False",
-            "has_big_blackboard": "False"
-        },
-        {
-            "spaciousness": "154",
-            "code": "Б205",
-            "building": "E",
-            "prof_type": "D",
+            "spaciousness": "98",
+            "code": "4172",
+            "building": "A",
+            "prof_type": "S",
             "has_projector": "True",
             "has_big_blackboard": "False"
         },
         {
-            "spaciousness": "205",
-            "code": "ПК144",
-            "building": "V",
-            "prof_type": "L",
+            "spaciousness": "88",
+            "code": "4173",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "77",
+            "code": "4174",
+            "building": "A",
+            "prof_type": "S",
             "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "140",
+            "code": "4175",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "117",
+            "code": "4176",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "102",
+            "code": "4177",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "84",
+            "code": "4178",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "122",
+            "code": "4179",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "93",
+            "code": "4180",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "89",
+            "code": "4181",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "104",
+            "code": "4182",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "92",
+            "code": "4183",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "112",
+            "code": "4184",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "66",
+            "code": "4185",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "102",
+            "code": "4186",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "85",
+            "code": "4187",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "103",
+            "code": "4188",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "109",
+            "code": "4189",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "137",
+            "code": "4190",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "82",
+            "code": "4191",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "86",
+            "code": "4192",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "125",
+            "code": "4193",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "119",
+            "code": "4194",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "124",
+            "code": "4195",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "112",
+            "code": "4196",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "120",
+            "code": "4197",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "60",
+            "code": "4198",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "101",
+            "code": "4199",
+            "building": "A",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "51",
+            "code": "H200",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "109",
+            "code": "H201",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "143",
+            "code": "H202",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "146",
+            "code": "H203",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "136",
+            "code": "H204",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "110",
+            "code": "H205",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "77",
+            "code": "H206",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "85",
+            "code": "H207",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "63",
+            "code": "H208",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "64",
+            "code": "H209",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "134",
+            "code": "H210",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "81",
+            "code": "H211",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "95",
+            "code": "H212",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "97",
+            "code": "H213",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "76",
+            "code": "H214",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "109",
+            "code": "H215",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "78",
+            "code": "H216",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "118",
+            "code": "H217",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "81",
+            "code": "H218",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "101",
+            "code": "H219",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "97",
+            "code": "H220",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "92",
+            "code": "H221",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "136",
+            "code": "H222",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "93",
+            "code": "H223",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "84",
+            "code": "H224",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "55",
+            "code": "H225",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "125",
+            "code": "H226",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "113",
+            "code": "H227",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "64",
+            "code": "H228",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "103",
+            "code": "H229",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "118",
+            "code": "H230",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "50",
+            "code": "H231",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "82",
+            "code": "H232",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "118",
+            "code": "H233",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "142",
+            "code": "H234",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "76",
+            "code": "H235",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "83",
+            "code": "H236",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "65",
+            "code": "H237",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "122",
+            "code": "H238",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "147",
+            "code": "H239",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "130",
+            "code": "H240",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "66",
+            "code": "H241",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "62",
+            "code": "H242",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "105",
+            "code": "H243",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "83",
+            "code": "H244",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "142",
+            "code": "H245",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "117",
+            "code": "H246",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "109",
+            "code": "H247",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "52",
+            "code": "H248",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "150",
+            "code": "H249",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "125",
+            "code": "H250",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "127",
+            "code": "H251",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "115",
+            "code": "H252",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "124",
+            "code": "H253",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "108",
+            "code": "H254",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "60",
+            "code": "H255",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "136",
+            "code": "H256",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "69",
+            "code": "H257",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "65",
+            "code": "H258",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "97",
+            "code": "H259",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "61",
+            "code": "H260",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "99",
+            "code": "H261",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "126",
+            "code": "H262",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "89",
+            "code": "H263",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "101",
+            "code": "H264",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "100",
+            "code": "H265",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "137",
+            "code": "H266",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "142",
+            "code": "H267",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "112",
+            "code": "H268",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "113",
+            "code": "H269",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "76",
+            "code": "H270",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "76",
+            "code": "H271",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "110",
+            "code": "H272",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "57",
+            "code": "H273",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "51",
+            "code": "H274",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "111",
+            "code": "H275",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "51",
+            "code": "H276",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "108",
+            "code": "H277",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "145",
+            "code": "H278",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "125",
+            "code": "H279",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "52",
+            "code": "H280",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "146",
+            "code": "H281",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "84",
+            "code": "H282",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "57",
+            "code": "H283",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "105",
+            "code": "H284",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "75",
+            "code": "H285",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "106",
+            "code": "H286",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "90",
+            "code": "H287",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "64",
+            "code": "H288",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "84",
+            "code": "H289",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "109",
+            "code": "H290",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "56",
+            "code": "H291",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "130",
+            "code": "H292",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "102",
+            "code": "H293",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "139",
+            "code": "H294",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "114",
+            "code": "H295",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "123",
+            "code": "H296",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "89",
+            "code": "H297",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "True"
+        },
+        {
+            "spaciousness": "78",
+            "code": "H298",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "False",
+            "has_big_blackboard": "False"
+        },
+        {
+            "spaciousness": "57",
+            "code": "H299",
+            "building": "E",
+            "prof_type": "S",
+            "has_projector": "True",
             "has_big_blackboard": "True"
         }
     ]
