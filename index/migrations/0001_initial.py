@@ -96,7 +96,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='teacher',
             name='disciplines',
-            field=models.ManyToManyField(through='index.TeacherDetails', to='index.Discipline'),
+            field=models.ManyToManyField(through='index.TeacherDetails', to='index.Discipline', related_name='teachers'),
         ),
         migrations.CreateModel(
             name='Group',
@@ -104,7 +104,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('code', models.CharField(max_length=7)),
                 ('count_of_students', models.IntegerField()),
-                ('constraints', models.TextField(default='{"MO": [true, true, true, true, true, true, true], "TU": [true, true, true, true, true, true, true], "WE": [true, true, true, true, true, true, true], "TH": [true, true, true, true, true, true, true], "FR": [true, true, true, true, true, true, true], "SA": [true, true, true, true, true, true, true]}')),
                 ('flow', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, to='index.Flow')),
                 ('training_direction', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='index.TrainingDirection')),
             ],

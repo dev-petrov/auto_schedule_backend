@@ -81,18 +81,18 @@
     ],
     "Teacher": [
         {
-            "first_name": "Василий",
+            "first_name": "Денис",
             "last_name": "Васильев",
             "middle_name": "Борисович",
             "constraints": {
                 "buildings_priority": ["E", "A", "P", "S", "V"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, true, false, true, false, false], 
-                    "WE": [true, false, false, true, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, true, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "12",
@@ -105,12 +105,12 @@
             "constraints": {
                 "buildings_priority": ["E", "A", "P", "S", "V"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, true, false, true, false, false], 
-                    "WE": [true, false, false, true, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, true, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "20",
@@ -123,12 +123,12 @@
             "constraints": {
                 "buildings_priority": ["E", "A", "P", "S", "V"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, true, false, true, false, false], 
-                    "WE": [true, false, false, true, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, true, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "14",
@@ -141,12 +141,12 @@
             "constraints": {
                 "buildings_priority": ["P", "S", "A", "E", "V"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, true, false, true, false, false], 
-                    "WE": [true, false, false, true, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, true, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "20",
@@ -160,12 +160,12 @@
             "constraints": {
                 "buildings_priority": ["A", "E", "P", "S", "V"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, false, true, true, true, false], 
-                    "WE": [true, false, true, false, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, false, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, true, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "18",
@@ -178,12 +178,12 @@
             "constraints": {
                 "buildings_priority": ["P", "S", "A", "E", "V"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, true, false, true, false, false], 
-                    "WE": [true, false, false, true, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, true, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "22",
@@ -197,12 +197,12 @@
             "constraints": {
                 "buildings_priority": ["A", "S", "P", "V", "E"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, true, false, true, false, false], 
-                    "WE": [true, false, false, true, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, true, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "18",
@@ -215,12 +215,12 @@
             "constraints": {
                 "buildings_priority": ["A", "S", "P", "V", "E"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, true, false, true, false, false], 
-                    "WE": [true, false, false, true, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, true, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "18",
@@ -233,12 +233,12 @@
             "constraints": {
                 "buildings_priority": ["A", "S", "P", "V", "E"],
                 "day_constraints": {
-                    "MO": [true, false, true, true, true, false, true], 
-                    "TU": [true, true, true, false, true, false, false], 
-                    "WE": [true, false, false, true, true, true, true], 
-                    "TH": [true, false, true, true, false, true, false], 
-                    "FR": [true, true, false, true, true, true, true], 
-                    "SA": [true, false, true, true, true, false, true]
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
                 }
             },
             "total_hours": "24",
@@ -250,37 +250,99 @@
             "code": "09.01.01",
             "name": "Прикладная информатика",
             "type": "B",
-            "constraints": ["E", "A", "P", "S", "V"]
+            "constraints": {
+                "buildings": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, true, false], 
+                    "2": [true, true, true, true, true, true, false], 
+                    "3": [true, true, true, true, true, true, false], 
+                    "4": [true, true, true, true, true, true, false], 
+                    "5": [true, true, true, true, true, true, false], 
+                    "6": [true, true, true, true, true, true, false]
+                }
+            }
         },
         {
             "code": "10.03.01",
             "name": "Информационная безопасность",
             "type": "B",
-            "constraints": ["V", "P", "A", "S", "E"]
+            "constraints": {
+                "buildings": ["V", "P", "A", "S", "E"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, true, false], 
+                    "2": [true, true, true, true, true, true, false], 
+                    "3": [true, true, true, true, true, true, false], 
+                    "4": [true, true, true, true, true, true, false], 
+                    "5": [true, true, true, true, true, true, false], 
+                    "6": [true, true, true, true, true, true, false]
+                }
+                
+            } 
         },
         {
             "code": "10.03.02",
             "name": "Информационная безопасность",
             "type": "S",
-            "constraints": ["E", "S", "P", "A", "V"]
+            "constraints": {
+                "buildings": ["E", "S", "P", "A", "V"],
+                "day_constraints": {
+                    "1": [false, true, true, true, true, true, true], 
+                    "2": [false, true, true, true, true, true, true], 
+                    "3": [false, true, true, true, true, true, true], 
+                    "4": [false, true, true, true, true, true, true], 
+                    "5": [false, true, true, true, true, true, true], 
+                    "6": [false, true, true, true, true, true, true]
+                }
+
+            } 
         },
         {
             "code": "11.03.01",
             "name": "Веб-разработка",
             "type": "B",
-            "constraints": ["S", "A", "P", "E", "V"]
+            "constraints": {
+                "buildings": ["S", "A", "P", "E", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, false], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, false, false], 
+                    "4": [true, true, true, true, true, false, false], 
+                    "5": [true, true, true, true, true, false, false], 
+                    "6": [true, true, true, true, true, false, false]
+                }
+            }
         },
         {
             "code": "45.03.02",
             "name": "Лингвистика",
             "type": "B",
-            "constraints": ["E", "A", "P", "S", "V"]
+            "constraints": {
+                "buildings": ["S", "A", "P", "E", "V"],
+                "day_constraints": {
+                    "1": [true, false, true, true, true, false, true], 
+                    "2": [true, true, false, true, true, true, false], 
+                    "3": [true, false, true, false, true, true, true], 
+                    "4": [true, false, true, true, false, true, false], 
+                    "5": [true, true, false, true, true, true, true], 
+                    "6": [true, false, true, false, true, false, true]
+                }
+            }
         },
         {
             "code": "15.04.03",
             "name": "Прикладная механика",
             "type": "M",
-            "constraints": ["A", "E", "P", "V", "S"]
+            "constraints": {
+                "buildings": ["S", "A", "P", "E", "V"],
+                "day_constraints": {
+                    "1": [true, false, true, true, true, false, true], 
+                    "2": [true, true, false, true, true, true, false], 
+                    "3": [true, false, true, false, true, true, true], 
+                    "4": [true, false, true, true, false, true, false], 
+                    "5": [true, true, false, true, true, true, true], 
+                    "6": [true, false, true, false, true, false, true]
+                }
+            }
         }
     ],
     "Flow": [
@@ -295,212 +357,92 @@
         {
             "code": "181-351",
             "count_of_students": "15",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Веб-разработка",
-            "direct": "09.01.01"
+            "flow": "Информационная безопасность",
+            "direct": "10.03.01"
         },
         {
             "code": "181-352",
             "count_of_students": "30",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Веб-разработка",
-            "direct": "10.03.02"
+            "flow": "Информационная безопасность",
+            "direct": "10.03.01"
         },
         {
             "code": "181-331",
             "count_of_students": "24",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
             "flow": "Информационная безопасность",
-            "direct": "09.01.01"
+            "direct": "10.03.02"
         },
         {
             "code": "191-351",
             "count_of_students": "18",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Веб-разработка",
+            "flow": "Информационная безопасность",
             "direct": "10.03.01"
         },
         {
             "code": "191-352",
             "count_of_students": "22",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
             "flow": "Информационная безопасность",
-            "direct": "10.03.02"
+            "direct": "10.03.01"
         },
         {
             "code": "191-331",
             "count_of_students": "25",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
             "flow": "Информационная безопасность",
-            "direct": "09.01.01"
+            "direct": "10.03.02"
         },
         {
             "code": "181-361",
             "count_of_students": "15",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
             "flow": "Веб-разработка",
-            "direct": "10.03.01"
+            "direct": "09.01.01"
         },
         {
             "code": "181-362",
             "count_of_students": "17",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Информационная безопасность",
+            "flow": "Веб-разработка",
             "direct": "09.01.01"
         },
         {
             "code": "171-351",
             "count_of_students": "15",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Веб-разработка",
-            "direct": "09.01.01"
+            "flow": "Информационная безопасность",
+            "direct": "10.03.01"
         },
         {
             "code": "171-352",
             "count_of_students": "15",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Веб-разработка",
-            "direct": "10.03.02"
+            "flow": "Информационная безопасность",
+            "direct": "10.03.01"
         },
         {
             "code": "171-331",
             "count_of_students": "15",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
             "flow": "Информационная безопасность",
             "direct": "10.03.02"
         },
         {
             "code": "161-361",
             "count_of_students": "12",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Информационная безопасность",
-            "direct": "10.03.02"
+            "flow": "Веб-разработка",
+            "direct": "09.01.01"
         },
         {
             "code": "161-362",
             "count_of_students": "14",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Информационная безопасность",
-            "direct": "10.03.01"
+            "flow": "Веб-разработка",
+            "direct": "09.01.01"
         },
         {
             "code": "171-361",
             "count_of_students": "11",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
-            "flow": "Информационная безопасность",
-            "direct": "10.03.01"
+            "flow": "Веб-разработка",
+            "direct": "09.01.01"
         },
         {
             "code": "171-362",
             "count_of_students": "16",
-            "constraints": {
-                "MO": [true, false, true, true, true, false, true], 
-                "TU": [true, true, false, true, true, true, false], 
-                "WE": [true, false, true, false, true, true, true], 
-                "TH": [true, false, true, true, false, true, false], 
-                "FR": [true, true, false, true, true, true, true], 
-                "SA": [true, false, true, false, true, false, true]
-            },
             "flow": "Веб-разработка",
-            "direct": "10.03.01"
+            "direct": "09.01.01"
         }
     ],
     "EducationPlan": [

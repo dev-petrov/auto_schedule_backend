@@ -60,7 +60,7 @@ class Teacher(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50)
-    disciplines = models.ManyToManyField(Discipline, through='TeacherDetails')
+    disciplines = models.ManyToManyField(Discipline, through='TeacherDetails', related_name='teachers')
     constraints = models.TextField(default=json.dumps(def_constraints))
     total_hours = models.IntegerField()
 
@@ -108,7 +108,6 @@ class Group(models.Model):
     training_direction = models.ForeignKey(TrainingDirection, on_delete=models.PROTECT)
 
     flow = models.ForeignKey(Flow, on_delete=models.PROTECT, null=True, blank=True)
-    constraints = models.TextField(default=json.dumps(default_day_constraints))
 
 
 class EducationPlan(models.Model):
