@@ -97,7 +97,7 @@ def set_groups():
 
 def set_education_plans():
     disciplines = list(Discipline.objects.all())
-    count_of_hours = [18, 36, 54, 72]
+    count_of_hours = [18, 36, 54]
     education_plans = []
     for group in Group.objects.all():
         for i in range(random.randint(5, 7)):
