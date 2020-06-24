@@ -1,7 +1,7 @@
 from index.tests import MainTest
 
 
-class TestDiscipline(MainTest):
+class TestEducationPlan(MainTest):
 
     url = '/api/education_plan/'
 
@@ -22,13 +22,14 @@ class TestDiscipline(MainTest):
             'id': self.education_plan.id, 
             'discipline': {
                 'id': self.discipline.id, 
-                'title': 'Дисциплина1'
+                'title': 'Дисциплина1',
+                'prof_type': 'S',
+                'type': 'L',
             }, 
             'group': {
                 'id': self.group.id, 
                 'code': '181-351'
-            }, 
-            'type': 'L', 
+            },
             'hours': 20, 
             'constraints': None
         }
@@ -41,20 +42,20 @@ class TestDiscipline(MainTest):
             'discipline_id': self.discipline2.id, 
             'group_id': self.group2.id,
             'hours': 30,
-            'type': 'P',
         }
         response = self.client.post(self.url, data, format='json')
         data = {
             'id': response.json()['id'], 
             'discipline': {
                 'id': self.discipline2.id, 
-                'title': 'Дисциплина2'
+                'title': 'Дисциплина2',
+                'prof_type': 'S',
+                'type': 'L',
             }, 
             'group': {
                 'id': self.group2.id, 
                 'code': '181-352'
-            }, 
-            'type': 'P', 
+            },
             'hours': 30, 
             'constraints': None
         }
@@ -65,7 +66,6 @@ class TestDiscipline(MainTest):
     def test_update(self):
         data = {
             'discipline_id': self.discipline2.id, 
-            'type': 'LB',
             'group_id': self.group.id,
             'hours': 30,
         }
@@ -74,13 +74,14 @@ class TestDiscipline(MainTest):
             'id': self.education_plan.id, 
             'discipline': {
                 'id': self.discipline2.id, 
-                'title': 'Дисциплина2'
+                'title': 'Дисциплина2',
+                'prof_type': 'S',
+                'type': 'L',
             }, 
             'group': {
                 'id': self.group.id, 
                 'code': '181-351'
-            }, 
-            'type': 'LB', 
+            },  
             'hours': 30, 
             'constraints': None
         }

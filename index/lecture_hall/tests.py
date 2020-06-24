@@ -1,7 +1,7 @@
 from index.tests import MainTest
 
 
-class TestDiscipline(MainTest):
+class TestLectureHall(MainTest):
 
     url = '/api/lecture_hall/'
 

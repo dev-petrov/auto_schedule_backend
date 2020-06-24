@@ -1,7 +1,7 @@
 from index.tests import MainTest
 
 
-class TestDiscipline(MainTest):
+class TestTeacher(MainTest):
 
     url = '/api/teacher/'
 
@@ -25,14 +25,18 @@ class TestDiscipline(MainTest):
             'disciplines': [
                 {
                     'id': self.discipline.id, 
-                    'title': 'Дисциплина1'
+                    'title': 'Дисциплина1',
+                    'prof_type': 'S',
+                    'type': 'L',
                 }, 
                 {
                     'id': self.discipline2.id, 
-                    'title': 'Дисциплина2'
+                    'title': 'Дисциплина2',
+                    'prof_type': 'S',
+                    'type': 'L',
                 }
             ], 
-            'constraints': '{"buildings_priority": ["E", "A", "V", "S", "P"], "day_constraints": {"MO": [true, true, true, true, true, true, true], "TU": [true, true, true, true, true, true, true], "WE": [true, true, true, true, true, true, true], "TH": [true, true, true, true, true, true, true], "FR": [true, true, true, true, true, true, true], "SA": [true, true, true, true, true, true, true]}}', 
+            'constraints': '{"buildings_priority": ["E", "A", "V", "S", "P"], "day_constraints": {"1": [true, true, true, true, true, true, true], "2": [true, true, true, true, true, true, true], "3": [true, true, true, true, true, true, true], "4": [true, true, true, true, true, true, true], "5": [true, true, true, true, true, true, true], "6": [true, true, true, true, true, true, true]}}', 
             'total_hours': 180
         }
         self.assertEqual(response.status_code, 200)
@@ -57,10 +61,12 @@ class TestDiscipline(MainTest):
             'disciplines': [
                 {
                     'id': self.discipline2.id,
-                    'title': 'Дисциплина2'
+                    'title': 'Дисциплина2',
+                    'prof_type': 'S',
+                    'type': 'L',
                 }
             ], 
-            'constraints': '{"buildings_priority": ["E", "A", "V", "S", "P"], "day_constraints": {"MO": [true, true, true, true, true, true, true], "TU": [true, true, true, true, true, true, true], "WE": [true, true, true, true, true, true, true], "TH": [true, true, true, true, true, true, true], "FR": [true, true, true, true, true, true, true], "SA": [true, true, true, true, true, true, true]}}', 
+            'constraints': '{"buildings_priority": ["E", "A", "V", "S", "P"], "day_constraints": {"1": [true, true, true, true, true, true, true], "2": [true, true, true, true, true, true, true], "3": [true, true, true, true, true, true, true], "4": [true, true, true, true, true, true, true], "5": [true, true, true, true, true, true, true], "6": [true, true, true, true, true, true, true]}}', 
             'total_hours': 200
         }
         self.assertEqual(response.status_code, 201)
@@ -85,10 +91,12 @@ class TestDiscipline(MainTest):
             'disciplines': [
                 {
                     'id': self.discipline2.id, 
-                    'title': 'Дисциплина2'
+                    'title': 'Дисциплина2',
+                    'prof_type': 'S',
+                    'type': 'L',
                 }
             ], 
-            'constraints': '{"buildings_priority": ["E", "A", "V", "S", "P"], "day_constraints": {"MO": [true, true, true, true, true, true, true], "TU": [true, true, true, true, true, true, true], "WE": [true, true, true, true, true, true, true], "TH": [true, true, true, true, true, true, true], "FR": [true, true, true, true, true, true, true], "SA": [true, true, true, true, true, true, true]}}', 
+            'constraints': '{"buildings_priority": ["E", "A", "V", "S", "P"], "day_constraints": {"1": [true, true, true, true, true, true, true], "2": [true, true, true, true, true, true, true], "3": [true, true, true, true, true, true, true], "4": [true, true, true, true, true, true, true], "5": [true, true, true, true, true, true, true], "6": [true, true, true, true, true, true, true]}}', 
             'total_hours': 190
         }
         self.assertEqual(response.status_code, 200)

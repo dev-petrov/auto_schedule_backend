@@ -59,7 +59,7 @@ def set_disciplines():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['Discipline']:
-            Discipline.objects.create(title=d['title'], prof_type=d['prof_type'],
+            Discipline.objects.create(title=d['title'], prof_type=d['prof_type'],type=Discipline.TYPES[random.randint(0, len(Discipline.TYPES) - 1)][0],
             constraints_id=random.randint(1,4))
 
 
@@ -104,7 +104,6 @@ def set_education_plans():
             discipline = disciplines[random.randint(0, len(disciplines) - 1)]
             education_plans.append(
                 EducationPlan(
-                    type=EducationPlan.TYPES[random.randint(0, len(EducationPlan.TYPES) - 1)][0],
                     hours=count_of_hours[random.randint(0, 2)],
                     constraints=[],
                     discipline=discipline,

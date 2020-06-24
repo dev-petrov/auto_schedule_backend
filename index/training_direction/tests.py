@@ -1,7 +1,7 @@
 from index.tests import MainTest
 
 
-class TestDiscipline(MainTest):
+class TestTrainingDirection(MainTest):
 
     url = '/api/training_direction/'
 
@@ -19,7 +19,7 @@ class TestDiscipline(MainTest):
         response = self.client.get(f'{self.url}{self.training_direction.id}/')
         data = {
             'id': self.training_direction.id, 
-            'constraints': '{"buildings": ["E", "A", "P", "V", "S"], "day_constraints": {"MO": [true, true, true, true, true, true, true], "TU": [true, true, true, true, true, true, true], "WE": [true, true, true, true, true, true, true], "TH": [true, true, true, true, true, true, true], "FR": [true, true, true, true, true, true, true], "SA": [true, true, true, true, true, true, true]}}', 
+            'constraints': '{"buildings": ["E", "A", "P", "V", "S"], "day_constraints": {"1": [true, true, true, true, true, true, true], "2": [true, true, true, true, true, true, true], "3": [true, true, true, true, true, true, true], "4": [true, true, true, true, true, true, true], "5": [true, true, true, true, true, true, true], "6": [true, true, true, true, true, true, true]}}', 
             'code': 'test', 
             'name': 'Test', 
             'type': 'B'
@@ -38,7 +38,7 @@ class TestDiscipline(MainTest):
 
         data = {
             'id': response.json()['id'], 
-            'constraints': '{"buildings": ["E", "A", "P", "V", "S"], "day_constraints": {"MO": [true, true, true, true, true, true, true], "TU": [true, true, true, true, true, true, true], "WE": [true, true, true, true, true, true, true], "TH": [true, true, true, true, true, true, true], "FR": [true, true, true, true, true, true, true], "SA": [true, true, true, true, true, true, true]}}', 
+            'constraints': '{"buildings": ["E", "A", "P", "V", "S"], "day_constraints": {"1": [true, true, true, true, true, true, true], "2": [true, true, true, true, true, true, true], "3": [true, true, true, true, true, true, true], "4": [true, true, true, true, true, true, true], "5": [true, true, true, true, true, true, true], "6": [true, true, true, true, true, true, true]}}', 
             'code': 'test3', 
             'name': 'Test3', 
             'type': 'M'
@@ -57,7 +57,7 @@ class TestDiscipline(MainTest):
         response = self.client.put(f'{self.url}{self.teacher.id}/', data, format='json')
         data = {
             'id': self.training_direction.id, 
-            'constraints': '{"buildings": ["E", "A", "P", "V", "S"], "day_constraints": {"MO": [true, true, true, true, true, true, true], "TU": [true, true, true, true, true, true, true], "WE": [true, true, true, true, true, true, true], "TH": [true, true, true, true, true, true, true], "FR": [true, true, true, true, true, true, true], "SA": [true, true, true, true, true, true, true]}}', 
+            'constraints': '{"buildings": ["E", "A", "P", "V", "S"], "day_constraints": {"1": [true, true, true, true, true, true, true], "2": [true, true, true, true, true, true, true], "3": [true, true, true, true, true, true, true], "4": [true, true, true, true, true, true, true], "5": [true, true, true, true, true, true, true], "6": [true, true, true, true, true, true, true]}}', 
             'code': 'test3', 
             'name': 'Test', 
             'type': 'S'

@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from index.flow.views import FlowSerializer
 from django_filters.rest_framework import FilterSet, CharFilter, NumberFilter
 from index.training_direction.views import TrainingDirectionSerializer
+from index.lesson.views import SpecDisciplineSerializer
 
 
 class GroupSerializer(serializers.ModelSerializer):
@@ -12,6 +13,7 @@ class GroupSerializer(serializers.ModelSerializer):
     flow_id = serializers.IntegerField(write_only=True)
     training_direction = TrainingDirectionSerializer(read_only=True)
     training_direction_id = serializers.IntegerField(write_only=True)
+    disciplines = SpecDisciplineSerializer(many=True, read_only=True)
 
     class Meta:
         model = Group

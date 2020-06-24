@@ -27,7 +27,8 @@ class TestDiscipline(MainTest):
                 'big_blackboard': False
             }, 
             'title': 'Дисциплина1', 
-            'prof_type': 'S'
+            'prof_type': 'S',
+            'type': 'L',
         }
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), data)
@@ -49,7 +50,8 @@ class TestDiscipline(MainTest):
                 'big_blackboard': True
             }, 
             'title': 'Дисциплина4', 
-            'prof_type': 'C'
+            'prof_type': 'C',
+            'type': 'L',
         }
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.json(), data)
@@ -71,7 +73,8 @@ class TestDiscipline(MainTest):
                 'big_blackboard': True
             }, 
             'title': 'Дисциплина4', 
-            'prof_type': 'C'
+            'prof_type': 'C',
+            'type': 'L',
         }
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), data)

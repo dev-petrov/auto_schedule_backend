@@ -26,9 +26,20 @@ class Discipline(models.Model):
         (PROF_TYPE_MECHANIC, 'Мастерская'),
     ]
 
+    TYPE_LECTION = 'L'
+    TYPE_PRACTICE = 'P'
+    TYPE_LAB = 'LB'
+
+    TYPES = [
+        (TYPE_LECTION, 'Лекция'),
+        (TYPE_PRACTICE, 'Практика'),
+        (TYPE_LAB, 'Лаб. работа'),
+    ]
+
     title = models.CharField(max_length=100)
     prof_type = models.CharField(max_length=1, choices=PROF_TYPES, default=PROF_TYPE_SIMPLE)
     constraints = models.ForeignKey(ConstraintCollection, on_delete=models.PROTECT)
+    type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
 
 
 class Teacher(models.Model):
@@ -106,24 +117,14 @@ class Group(models.Model):
     code = models.CharField(max_length=7)
     count_of_students = models.IntegerField()
     training_direction = models.ForeignKey(TrainingDirection, on_delete=models.PROTECT)
-
+    disciplines = models.ManyToManyField(Discipline, through='EducationPlan', related_name='groups')
     flow = models.ForeignKey(Flow, on_delete=models.PROTECT, null=True, blank=True)
 
 
 class EducationPlan(models.Model):
-    TYPE_LECTION = 'L'
-    TYPE_PRACTICE = 'P'
-    TYPE_LAB = 'LB'
-
-    TYPES = [
-        (TYPE_LECTION, 'Лекция'),
-        (TYPE_PRACTICE, 'Практика'),
-        (TYPE_LAB, 'Лаб. работа'),
-    ]
 
     discipline = models.ForeignKey(Discipline, on_delete=models.PROTECT)
     group = models.ForeignKey(Group, on_delete=models.PROTECT)
-    type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
 
     hours = models.IntegerField()
     constraints = models.TextField(null=True)
@@ -132,7 +133,6 @@ class EducationPlan(models.Model):
         return '{} {} {}'.format(
             self.discipline.title,
             self.group.code,
-            self.type,
             self.hours,
         )
 
@@ -168,7 +168,7 @@ class Lesson(models.Model):
         (5, 'Пятница'),
         (6, 'Суббота'),
     ]
-    discipline = models.ForeignKey(EducationPlan, on_delete=models.PROTECT)
+    discipline = models.ForeignKey(Discipline, on_delete=models.PROTECT)
     group = models.ForeignKey(Group, on_delete=models.PROTECT)
     teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
     lecture_hall = models.ForeignKey(LectureHall, on_delete=models.PROTECT)

@@ -1,14 +1,14 @@
 from index.tests import MainTest
 from index.models import Lesson
 
-class TestDiscipline(MainTest):
+class TestLesson(MainTest):
 
     url = '/api/lesson/'
 
     def setUp(self):
         super().setUp()
         self.lesson = Lesson.objects.create(
-            discipline=self.education_plan,
+            discipline=self.discipline,
             group=self.group,
             teacher=self.teacher,
             lecture_hall=self.lecture_hall,
@@ -16,7 +16,7 @@ class TestDiscipline(MainTest):
             day_of_week=1,
         )
         Lesson.objects.create(
-            discipline=self.education_plan,
+            discipline=self.discipline,
             group=self.group,
             teacher=self.teacher,
             lecture_hall=self.lecture_hall,
@@ -36,12 +36,9 @@ class TestDiscipline(MainTest):
         data = {
             'id': self.lesson.id, 
             'discipline': {
-                'id': self.education_plan.id, 
-                'discipline': {
-                    'id': self.discipline.id, 
-                    'title': 'Дисциплина1'
-                }, 
-                'hours': 20, 
+                'id': self.discipline.id, 
+                'prof_type': 'S', 
+                'title': 'Дисциплина1', 
                 'type': 'L'
             },
             'group': {
@@ -80,13 +77,10 @@ class TestDiscipline(MainTest):
         data = {
             'id': response.json()['id'], 
             'discipline': {
-                'id': self.education_plan.id, 
-                'discipline': {
-                    'id': self.discipline.id, 
-                    'title': 'Дисциплина1'
-                }, 
-                'hours': 20, 
-                'type': 'L'
+                'id': self.discipline.id, 
+                'title': 'Дисциплина1',
+                'prof_type': 'S',
+                'type': 'L',
             }, 
             'group': {
                 'id': self.group.id, 
@@ -124,14 +118,11 @@ class TestDiscipline(MainTest):
         data = {
             'id': self.lesson.id, 
             'discipline': {
-                'id': self.education_plan2.id, 
-                'discipline': {
-                    'id': self.discipline2.id, 
-                    'title': 'Дисциплина2'
-                }, 
-                'hours': 30, 
+                'id': self.discipline2.id, 
+                'prof_type': 'S', 
+                'title': 'Дисциплина2', 
                 'type': 'L'
-            }, 
+            },
             'group': {
                 'id': self.group.id, 
                 'code': '181-351'

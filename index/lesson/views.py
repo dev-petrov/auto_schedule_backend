@@ -20,14 +20,7 @@ class SpecGroupSerializer(serializers.ModelSerializer):
 class SpecDisciplineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Discipline
-        fields = ['id', 'title']
-
-
-class SpecEducationPlanSerializer(serializers.ModelSerializer):
-    discipline = SpecDisciplineSerializer()
-    class Meta:
-        model = EducationPlan
-        fields = ['id', 'discipline', 'hours', 'type']
+        fields = ['id', 'title', 'prof_type', 'type']
 
 
 class SpecLectureHallSerializer(serializers.ModelSerializer):
@@ -37,7 +30,7 @@ class SpecLectureHallSerializer(serializers.ModelSerializer):
 
 
 class LessonSerializer(serializers.ModelSerializer):
-    discipline = SpecEducationPlanSerializer(read_only=True)
+    discipline = SpecDisciplineSerializer(read_only=True)
     group = SpecGroupSerializer(read_only=True)
     teacher = SpecTeacherSerializer(read_only=True)
     lecture_hall = SpecLectureHallSerializer(read_only=True)
@@ -83,7 +76,7 @@ class LessonViewSet(viewsets.ModelViewSet):
     filterset_class = LessonFilter
 
     def list(self, request):
-        query = self.filter_queryset(self.queryset).select_related('discipline', 'lecture_hall', 'teacher', 'group', 'discipline__discipline')
+        query = self.filter_queryset(self.queryset).select_related('discipline', 'lecture_hall', 'teacher', 'group')
         dtype = request.query_params.get('dtype', 'a')
         if dtype.lower() == 't':
             lessons = list(query.order_by('teacher_id', 'day_of_week', 'lesson'))

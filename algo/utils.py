@@ -281,7 +281,7 @@ class Algorythm():
                                     'lecture_hall_id': lecture_hall,
                                     'group_id': group.id,
                                     'teacher_id': teacher.id,
-                                    'discipline_id': discipline.id,
+                                    'discipline_id': discipline.discipline_id,
                                     'lesson': lesson,
                                     'day_of_week': day_of_week,
                                 }, 
