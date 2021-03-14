@@ -75,30 +75,30 @@ class LessonViewSet(viewsets.ModelViewSet):
     serializer_class = LessonSerializer
     filterset_class = LessonFilter
 
-    def list(self, request):
-        query = self.filter_queryset(self.queryset).select_related('discipline', 'lecture_hall', 'teacher', 'group')
-        dtype = request.query_params.get('dtype', 'a')
-        if dtype.lower() == 't':
-            lessons = list(query.order_by('teacher_id', 'day_of_week', 'lesson'))
-            data = {}
-            for lesson in lessons:
-                key = lesson.teacher_id
-                if not key in data:
-                    data[key] = []
-                data[key].append(
-                    LessonSerializer(lesson).data
-                )
-        elif dtype.lower() == 'g':
-            lessons = list(query.order_by('group_id', 'day_of_week', 'lesson'))
-            data = {}
-            for lesson in lessons:
-                key = lesson.group_id
-                if not key in data:
-                    data[key] = []
-                data[key].append(
-                    LessonSerializer(lesson).data
-                )
-        else:
-            data = LessonSerializer(query.order_by('group_id', 'day_of_week', 'lesson'), many=True).data
-        return Response(data)
+    # def list(self, request):
+    #     query = self.filter_queryset(self.queryset).select_related('discipline', 'lecture_hall', 'teacher', 'group')
+    #     dtype = request.query_params.get('dtype', 'a')
+    #     if dtype.lower() == 't':
+    #         lessons = list(query.order_by('teacher_id', 'day_of_week', 'lesson'))
+    #         data = {}
+    #         for lesson in lessons:
+    #             key = lesson.teacher_id
+    #             if not key in data:
+    #                 data[key] = []
+    #             data[key].append(
+    #                 LessonSerializer(lesson).data
+    #             )
+    #     elif dtype.lower() == 'g':
+    #         lessons = list(query.order_by('group_id', 'day_of_week', 'lesson'))
+    #         data = {}
+    #         for lesson in lessons:
+    #             key = lesson.group_id
+    #             if not key in data:
+    #                 data[key] = []
+    #             data[key].append(
+    #                 LessonSerializer(lesson).data
+    #             )
+    #     else:
+    #         data = LessonSerializer(query.order_by('group_id', 'day_of_week', 'lesson'), many=True).data
+    #     return Response(data)
     
