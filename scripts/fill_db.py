@@ -4,6 +4,7 @@ import random
 import codecs
 from index.models import ConstraintCollection
 from django.contrib.auth.models import User
+from django.db import transaction
 from algo.algov1 import Algorythm
 '''
 Модуль для заполнения базы данных тестовыми данными.
@@ -44,17 +45,18 @@ from algo.algov1 import Algorythm
 path = 'scripts/data.json'
 
 def main():
-    set_disciplines()
-    set_buildings()
-    set_teachers()
-    set_training_directions()
-    set_flows()
-    set_groups()
-    set_education_plans()
-    set_lecture_halls()
-    set_lessons()
-    User.objects.create_superuser('admin', email='admin@easytable.site', password='encrypted_pass')
-    print('Admin login: admin; admin pass: encrypted_pass')
+    with transaction.atomic():
+        set_disciplines()
+        set_buildings()
+        set_teachers()
+        set_training_directions()
+        set_flows()
+        set_groups()
+        set_education_plans()
+        set_lecture_halls()
+        set_lessons()
+        User.objects.create_superuser('admin', email='admin@easytable.site', password='encrypted_pass')
+        print('Admin login: admin; admin pass: encrypted_pass')
 
 def set_buildings():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
@@ -132,14 +134,14 @@ def set_groups():
 
 def set_education_plans():
     disciplines = list(Discipline.objects.all())
-    count_of_lessons = [1, 2, 3]
+    count_of_lessons = [1, 2]
     education_plans = []
     for group in Group.objects.all():
-        for i in range(random.randint(5, 7)):
+        for i in range(random.randint(3, 5)):
             discipline = disciplines[random.randint(0, len(disciplines) - 1)]
             education_plans.append(
                 EducationPlan(
-                    lessons_in_week=count_of_lessons[random.randint(0, 2)],
+                    lessons_in_week=count_of_lessons[random.randint(0, 1)],
                     discipline=discipline,
                     group=group,
                 )
