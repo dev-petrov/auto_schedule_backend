@@ -42,42 +42,52 @@ class Discipline(models.Model):
     type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
     # code = models.CharField(max_length=100)
 
+class Building(models.Model):
+    name = models.CharField(max_length=128)
+    code = models.CharField(max_length=32)
+    primary_color = models.CharField(max_length=7)
+    secondary_color = models.CharField(max_length=7)
+
 
 class Teacher(models.Model):
 
-    BUILD_VDNH = 'V'
-    BUILD_AUTAZ = 'A'
-    BUILD_ELECTRO = 'E'
-    BUILD_PRYANIKI = 'P'
-    BUILD_SADOVAYA = 'S'
+    # BUILD_VDNH = 'V'
+    # BUILD_AUTAZ = 'A'
+    # BUILD_ELECTRO = 'E'
+    # BUILD_PRYANIKI = 'P'
+    # BUILD_SADOVAYA = 'S'
 
-    BUILDINGS = [
-        (BUILD_VDNH, 'ул. Павла Корчагина'),
-        (BUILD_AUTAZ, 'ул. Автозаводская'),
-        (BUILD_ELECTRO, 'ул. Большая Семеновская'),
-        (BUILD_PRYANIKI, 'ул. Прянишникова'),
-        (BUILD_SADOVAYA, 'ул. Садовая-Спасская'),
-    ]
-    def_constraints = {
-        'buildings_priority': [
-            BUILD_ELECTRO, 
-            BUILD_AUTAZ, 
-            BUILD_VDNH, 
-            BUILD_SADOVAYA, 
-            BUILD_PRYANIKI,
-        ],
-        'day_constraints': default_day_constraints,
-    }
+    # BUILDINGS = [
+    #     (BUILD_VDNH, 'ул. Павла Корчагина'),
+    #     (BUILD_AUTAZ, 'ул. Автозаводская'),
+    #     (BUILD_ELECTRO, 'ул. Большая Семеновская'),
+    #     (BUILD_PRYANIKI, 'ул. Прянишникова'),
+    #     (BUILD_SADOVAYA, 'ул. Садовая-Спасская'),
+    # ]
 
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50)
     disciplines = models.ManyToManyField(Discipline, through='TeacherDetails', related_name='teachers')
-    constraints = models.TextField(default=json.dumps(def_constraints))
     total_hours = models.IntegerField()
 
     def __str__(self):
         return f'{self.last_name} {self.first_name} {self.middle_name}'
+
+
+class TeacherLessonConstraint(models.Model):
+    class Meta:
+        unique_together = ['lesson', 'day_of_week', 'teacher']
+    lesson = models.IntegerField()
+    day_of_week = models.IntegerField()
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='constraints')
+
+
+# class TeacherBuildingConstraint(models.Model):
+#     building = models.ForeignKey(Building, on_delete=models.PROTECT)
+#     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+#     ordering = models.IntegerField()
+
 
 class TrainingDirection(models.Model):
 
@@ -91,24 +101,26 @@ class TrainingDirection(models.Model):
         (TYPE_MAGISTRACY, 'Магистратура'),
     ]
 
-    def_constraints = {
-        'buildings':[
-            Teacher.BUILD_ELECTRO, 
-            Teacher.BUILD_AUTAZ, 
-            Teacher.BUILD_PRYANIKI, 
-            Teacher.BUILD_VDNH, 
-            Teacher.BUILD_SADOVAYA,
-        ],
-        'day_constraints': default_day_constraints,
-    }
 
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=50)
 
     type = models.CharField(max_length=1, choices=TYPES, default=TYPE_BACHELOR)
 
-    constraints = models.TextField(verbose_name='Ограничения направления', default=json.dumps(def_constraints))
+class LessonTrainingDirectionConstraint(models.Model):
+    class Meta:
+        unique_together = ['lesson', 'day_of_week', 'training_direction']
+    lesson = models.IntegerField()
+    day_of_week = models.IntegerField()
+    training_direction = models.ForeignKey(TrainingDirection, on_delete=models.CASCADE, related_name='constraints')
 
+
+class BuildingTrainingDirectionConstraint(models.Model):
+    class Meta:
+        unique_together = ['building', 'training_direction']
+    building = models.ForeignKey(Building, on_delete=models.PROTECT)
+    training_direction = models.ForeignKey(TrainingDirection, on_delete=models.CASCADE, related_name='building_constraints')
+    ordering = models.IntegerField()
 
 class Flow(models.Model):
     name = models.CharField(max_length=200)
@@ -126,9 +138,8 @@ class EducationPlan(models.Model):
 
     discipline = models.ForeignKey(Discipline, on_delete=models.PROTECT)
     group = models.ForeignKey(Group, on_delete=models.PROTECT)
-
-    hours = models.IntegerField()
-    constraints = models.TextField(null=True)
+    is_active = models.BooleanField(default=True)
+    lessons_in_week = models.IntegerField()
 
     def __str__(self):
         return '{} {} {}'.format(
@@ -140,17 +151,12 @@ class EducationPlan(models.Model):
 class LectureHall(models.Model):
     spaciousness = models.IntegerField()
     code = models.CharField(max_length=10)
-    building = models.CharField(max_length=1, choices=Teacher.BUILDINGS, default=Teacher.BUILD_ELECTRO)
+    building = models.ForeignKey(Building, on_delete=models.PROTECT)
     prof_type = models.CharField(max_length=1, choices=Discipline.PROF_TYPES, default=Discipline.PROF_TYPE_SIMPLE)
     constraints = models.ForeignKey(ConstraintCollection, on_delete=models.PROTECT)
 
 
 class Lesson(models.Model):
-    class Meta:
-        unique_together = [
-            ['teacher', 'lesson', 'day_of_week'],
-            ['group', 'lesson', 'day_of_week'],
-        ]
     LESSONS = [
         (1, 'Первая пара'),
         (2, 'Вторая пара'),
