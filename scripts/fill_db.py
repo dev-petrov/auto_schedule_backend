@@ -4,7 +4,7 @@ import random
 import codecs
 from index.models import ConstraintCollection
 from django.contrib.auth.models import User
-from algo.utils import Algorythm
+from algo.algov1 import Algorythm
 '''
 Модуль для заполнения базы данных тестовыми данными.
 
@@ -45,6 +45,7 @@ path = 'scripts/data.json'
 
 def main():
     set_disciplines()
+    set_buildings()
     set_teachers()
     set_training_directions()
     set_flows()
@@ -54,6 +55,15 @@ def main():
     set_lessons()
     User.objects.create_superuser('admin', email='admin@easytable.site', password='encrypted_pass')
     print('Admin login: admin; admin pass: encrypted_pass')
+
+def set_buildings():
+    with codecs.open(path, 'r', 'utf_8_sig') as f:
+        data = json.loads(f.read())
+        for d in data['Building']:
+            Building.objects.create(
+                name=d['name'],
+                code=d['code'],
+            )
 
 def set_disciplines():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
@@ -68,7 +78,15 @@ def set_teachers():
         data = json.loads(f.read())
         for d in data['Teacher']:
             teacher = Teacher.objects.create(first_name=d['first_name'], last_name=d['last_name'],
-             middle_name=d['middle_name'], constraints=d['constraints'], total_hours=d['total_hours'])
+             middle_name=d['middle_name'], total_hours=d['total_hours'])
+            for day, constraints in d['constraints']['day_constraints'].items():
+                for i, available in enumerate(constraints):
+                    if available:
+                        TeacherLessonConstraint.objects.create(
+                            lesson=i + 1,
+                            day_of_week=day,
+                            teacher=teacher,
+                        )
             for dis in d['disciplines']:
                 TeacherDetails.objects.create(teacher=teacher, discipline=Discipline.objects.filter(title=dis).first())
 
@@ -77,8 +95,25 @@ def set_training_directions():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['TrainingDirection']:
-            TrainingDirection.objects.create(code=d['code'], name=d['name'],
-             type=d['type'], constraints=d['constraints'])### constraints???
+            t_direction = TrainingDirection.objects.create(
+                code=d['code'], 
+                name=d['name'],
+                type=d['type'],
+            )
+            for day, constraints in d['constraints']['day_constraints'].items():
+                for i, available in enumerate(constraints):
+                    if available:
+                        LessonTrainingDirectionConstraint.objects.create(
+                            lesson=i + 1,
+                            day_of_week=day,
+                            training_direction=t_direction,
+                        )
+            for i, building_code in enumerate(d['constraints']['buildings']):
+                BuildingTrainingDirectionConstraint.objects.create(
+                    training_direction=t_direction,
+                    ordering=i,
+                    building=Building.objects.get(code=building_code),
+                )
 
 def set_flows():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
@@ -97,15 +132,14 @@ def set_groups():
 
 def set_education_plans():
     disciplines = list(Discipline.objects.all())
-    count_of_hours = [18, 36, 54]
+    count_of_lessons = [1, 2, 3]
     education_plans = []
     for group in Group.objects.all():
         for i in range(random.randint(5, 7)):
             discipline = disciplines[random.randint(0, len(disciplines) - 1)]
             education_plans.append(
                 EducationPlan(
-                    hours=count_of_hours[random.randint(0, 2)],
-                    constraints=[],
+                    lessons_in_week=count_of_lessons[random.randint(0, 2)],
                     discipline=discipline,
                     group=group,
                 )
@@ -117,8 +151,9 @@ def set_lecture_halls():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['LectureHall']:
+            building = Building.objects.get(code=d['building'])
             LectureHall.objects.create(spaciousness=d['spaciousness'], code=d['code'],
-             building=d['building'], prof_type=d['prof_type'],
+             building=building, prof_type=d['prof_type'],
              constraints_id=random.randint(1,4))
             #lechall.constraints = ConstraintCollection.objects.first()
 

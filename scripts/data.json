@@ -445,113 +445,6 @@
             "direct": "09.01.01"
         }
     ],
-    "EducationPlan": [
-        {
-            "type": "L",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "P",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "L",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "P",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "L",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "P",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "LB",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "L",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "P",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "L",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "P",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "L",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "L",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "P",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        },
-        {
-            "type": "LB",
-            "hours": "20",
-            "constraints": [],
-            "discipline": "Физика",
-            "group": "181-351"
-        }
-    ],
     "LectureHall": [
         {
             "spaciousness": "150",
@@ -4312,6 +4205,28 @@
             "prof_type": "S",
             "has_projector": "True",
             "has_big_blackboard": "True"
+        }
+    ],
+    "Building": [
+        {
+            "name": "ул. Павла Корчагина",
+            "code": "V"
+        },
+        {
+            "name": "ул. Автозаводская",
+            "code": "A"
+        },
+        {
+            "name": "ул. Большая Семеновская",
+            "code": "E"
+        },
+        {
+            "name": "ул. Прянишникова",
+            "code": "P"
+        },
+        {
+            "name": "ул. Садовая-Спасская",
+            "code": "S"
         }
     ]
 }

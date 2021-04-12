@@ -1,15 +1,23 @@
-from index.models import Teacher, Discipline, TeacherDetails
+from index.models import Teacher, Discipline, TeacherDetails, TeacherLessonConstraint
 from rest_framework import serializers, viewsets
 from rest_framework.response import Response
 from django_filters.rest_framework import FilterSet, CharFilter
 from index.lesson.views import SpecDisciplineSerializer
 from django.db.models import Q
+from rest_framework.decorators import action
+
+class TeacherLessonConstraintSerializer(serializers.ModelSerializer):
+    teacher_id = serializers.IntegerField(required=False)
+    class Meta:
+        model = TeacherLessonConstraint
+        fields = ['id', 'lesson', 'day_of_week', 'teacher_id']
 
 
 class TeacherSerializer(serializers.ModelSerializer):
     disciplines = SpecDisciplineSerializer(many=True, read_only=True)
     constraints = serializers.JSONField(required=False)
     disciplines_ids = serializers.ListField(write_only=True)
+    constraints = TeacherLessonConstraintSerializer(many=True, read_only=True)
 
     class Meta:
         model = Teacher
@@ -85,3 +93,27 @@ class TeacherViewSet(viewsets.ModelViewSet):
         TeacherDetails.objects.bulk_create(details)
 
         return Response(TeacherSerializer(instance=teacher).data)
+
+    @action(detail=True, methods=['post']) 
+    def set_constraints(self, request, pk=None):
+        constraints = TeacherLessonConstraintSerializer(data=request.data, many=True)
+        constraints.is_valid(raise_exception=True)
+
+        ids_to_delete = []
+        constraints_to_create = []
+        for constraint in constraints:
+            if constraint.get('id'):
+                if constraint.get('delete'):
+                    ids_to_delete.append(constraint['id'])
+                continue
+            constraints_to_create.append(
+                TeacherLessonConstraint(
+                    lesson=constraint['lesson'],
+                    day_of_week=constraint['day_of_week'],
+                    teacher_id=pk,
+                )
+            )
+        TeacherLessonConstraint.objects.filter(id__in=ids_to_delete).delete()
+        TeacherLessonConstraint.objects.bulk_create(constraints_to_create)
+
+        return Response()
