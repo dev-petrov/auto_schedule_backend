@@ -24,10 +24,12 @@ class SpecGroupSerializer(serializers.ModelSerializer):
         fields = ['id', 'code']
 
 
-class SpecDisciplineSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Discipline
-        fields = ['id', 'title', 'prof_type', 'type']
+class SpecDisciplineSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    title = serializers.CharField()
+    prof_type = serializers.CharField()
+    type = serializers.CharField()
+    short_name = serializers.CharField()
 
 
 class SpecLectureHallSerializer(serializers.ModelSerializer):
@@ -53,7 +55,7 @@ class LessonSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         lessons = Lesson.objects.all()
         if self.instance:
-            lessons = lessons.exclude(self.instance.id)
+            lessons = lessons.exclude(id=self.instance.id)
 
         teacher_lesson = lessons.filter(
             teacher_id=attrs['teacher_id'],
@@ -75,12 +77,12 @@ class LessonSerializer(serializers.ModelSerializer):
         if not TeacherDetails.objects.filter(teacher_id=attrs['teacher_id'], discipline=discipline).exists():
             teacher = Teacher.objects.get(id=attrs['teacher_id'])
             type = TYPES_MESSAGES[discipline.type]
-            raise serializers.ValidationError(f'Преподаватель {teacher.last_name} {teacher.first_name} не может вести {type} по предмету {discipline.name}.')
+            raise serializers.ValidationError(f'Преподаватель {teacher.last_name} {teacher.first_name} не может вести {type} по предмету {discipline.title}.')
 
 
         if not EducationPlan.objects.filter(discipline=discipline, group_id=attrs['group_id'], is_active=True).exists():
-            group = Group.objects.get(attrs['group_id'])
-            raise serializers.ValidationError(f'У группы {group.code} нет дисциплины {discipline.name} в образовательном плане.')
+            group = Group.objects.get(id=attrs['group_id'])
+            raise serializers.ValidationError(f'У группы {group.code} нет дисциплины {discipline.title} в образовательном плане.')
 
         if discipline.type == Discipline.TYPE_LECTION:
             teacher_lesson = teacher_lesson.exclude(discipline=discipline)
@@ -95,7 +97,7 @@ class LessonSerializer(serializers.ModelSerializer):
         if lecture_hall_lesson.exists():
             raise serializers.ValidationError('Данная аудитория занята в это время.')
        
-        return True
+        return attrs
 
 
 class LessonFilter(FilterSet):

@@ -14,14 +14,13 @@ class TeacherLessonConstraintSerializer(serializers.ModelSerializer):
 
 
 class TeacherSerializer(serializers.ModelSerializer):
-    disciplines = SpecDisciplineSerializer(many=True, read_only=True)
+    disciplines = SpecDisciplineSerializer(many=True)
     constraints = serializers.JSONField(required=False)
-    disciplines_ids = serializers.ListField(write_only=True)
     constraints = TeacherLessonConstraintSerializer(many=True, read_only=True)
 
     class Meta:
         model = Teacher
-        fields = ['id', 'first_name', 'last_name', 'middle_name', 'disciplines', 'constraints', 'total_hours', 'disciplines_ids']
+        fields = ['id', 'first_name', 'last_name', 'middle_name', 'disciplines', 'constraints', 'total_hours']
 
 
 class TeacherFilter(FilterSet):
@@ -54,7 +53,7 @@ class TeacherViewSet(viewsets.ModelViewSet):
 
         data.is_valid(raise_exception=True)
 
-        disciplines_ids = data.validated_data.pop('disciplines_ids', [])
+        disciplines_ids = data.validated_data.pop('disciplines', [])
 
         data.save()
 
@@ -62,8 +61,8 @@ class TeacherViewSet(viewsets.ModelViewSet):
 
         details = [
             TeacherDetails(teacher=teacher,
-            discipline_id=discipline_id)
-            for discipline_id in disciplines_ids
+            discipline_id=discipline['id'])
+            for discipline in disciplines_ids
         ]
 
         TeacherDetails.objects.bulk_create(details)
@@ -78,11 +77,13 @@ class TeacherViewSet(viewsets.ModelViewSet):
 
         data.is_valid(raise_exception=True)
 
-        disciplines_ids = data.validated_data.pop('disciplines_ids', [])
+        disciplines_ids = list(map(lambda x: x['id'], data.validated_data.pop('disciplines', [])))
 
         data.save()
 
-        teacher.details.all().delete()
+        teacher.details.exclude(discipline_id__in=disciplines_ids).delete()
+        for d in teacher.details.all():
+            disciplines_ids.remove(d.discipline_id)
 
         details = [
             TeacherDetails(teacher=teacher,

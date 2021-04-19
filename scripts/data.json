@@ -1,82 +1,148 @@
 {
     "Discipline": [
         {
-            "title": "Линейная алгебра",
+            "title": "Линейная алгебра (Лекция)",
             "prof_type": "S",
             "need_projector": "False",
-            "need_big_blackboard": "True"
+            "need_big_blackboard": "True",
+            "type": "L",
+            "short_name": "ЛА(Л)"
+        },
+        {
+            "title": "Линейная алгебра (Практика)",
+            "prof_type": "S",
+            "need_projector": "False",
+            "need_big_blackboard": "True",
+            "type": "P",
+            "short_name": "ЛА(П)"
         },
         {
             "title": "Иностранный язык", 
             "prof_type": "S",
             "need_projector": "False",
-            "need_big_blackboard": "True"
+            "need_big_blackboard": "True",
+            "type": "P",
+            "short_name": "ИнЯз"
         },
         {
-            "title": "Безопасность жизнедеятельности", 
+            "title": "Безопасность жизнедеятельности (Лекция)", 
             "prof_type": "S",
             "need_projector": "True", 
-            "need_big_blackboard": "False"
+            "need_big_blackboard": "False",
+            "type": "L",
+            "short_name": "БЖД(Л)"
+        },
+        {
+            "title": "Безопасность жизнедеятельности (Практика)", 
+            "prof_type": "S",
+            "need_projector": "True", 
+            "need_big_blackboard": "False",
+            "type": "P",
+            "short_name": "БЖД(П)"
         },
         {
             "title": "Программирование мобильных приложений",
             "prof_type": "C",
             "need_projector": "True", 
-            "need_big_blackboard": "False"
+            "need_big_blackboard": "False",
+            "type": "LB",
+            "short_name": "ПМП"
         },
         {
-            "title": "Теория вероятнотей",
+            "title": "Теория вероятнотей (Лекция)",
             "prof_type": "S",
             "need_projector": "False",
-            "need_big_blackboard": "True"
+            "need_big_blackboard": "True",
+            "type": "L",
+            "short_name": "ТВ(Л)"
+        },
+        {
+            "title": "Теория вероятнотей (Практика)",
+            "prof_type": "S",
+            "need_projector": "False",
+            "need_big_blackboard": "True",
+            "type": "P",
+            "short_name": "ТВ(П)"
         },
         {
             "title": "Аналитика информационной безопасности", 
             "prof_type": "S",
             "need_projector": "True",
-            "need_big_blackboard": "False"
+            "need_big_blackboard": "False",
+            "type": "L",
+            "short_name": "АИБ"
         },
         {
             "title": "Основы сетевых технологий", 
             "prof_type": "C",
             "need_projector": "True", 
-            "need_big_blackboard": "False"
+            "need_big_blackboard": "False",
+            "type": "LB",
+            "short_name": "ОСТ"
         },
         {
             "title": "Веб-разработка", 
             "prof_type": "C",
             "need_projector": "True", 
-            "need_big_blackboard": "False"
+            "need_big_blackboard": "False",
+            "type": "LB",
+            "short_name": "ВР"
         },
         {
-            "title": "Физика",
+            "title": "Физика (Лекция)",
             "prof_type": "S",
             "need_projector": "True", 
-            "need_big_blackboard": "True"
+            "need_big_blackboard": "True",
+            "type": "L",
+            "short_name": "Ф(Л)"
+        },
+        {
+            "title": "Физика (Практика)",
+            "prof_type": "S",
+            "need_projector": "True", 
+            "need_big_blackboard": "True",
+            "type": "P",
+            "short_name": "Ф(П)"
         },
         {
             "title": "Сопротивление материалов", 
             "prof_type": "S",
             "need_projector": "False",
-            "need_big_blackboard": "True"
+            "need_big_blackboard": "True",
+            "type": "L",
+            "short_name": "СМ"
         },
         {
             "title": "История исскувств",
             "prof_type": "S",
             "need_projector": "True", 
-            "need_big_blackboard": "False"
+            "need_big_blackboard": "False",
+            "type": "L",
+            "short_name": "ИстИск"
         },
         {
-            "title": "Современный дизайн", 
+            "title": "Современный дизайн (Лекция)", 
             "prof_type": "D",
             "need_projector": "True", 
-            "need_big_blackboard": "False"
+            "need_big_blackboard": "False",
+            "type": "L",
+            "short_name": "СД(Л)"
+        },
+        {
+            "title": "Современный дизайн (Практика)", 
+            "prof_type": "D",
+            "need_projector": "True", 
+            "need_big_blackboard": "False",
+            "type": "P",
+            "short_name": "СД(П)"
         },
         {
             "title": "Работа на фрезеровочных станках",
             "prof_type": "M",
             "need_projector": "False",
-            "need_big_blackboard": "False"
+            "need_big_blackboard": "False",
+            "type": "P",
+            "short_name": "РФС"
         }
     ],
     "Teacher": [
@@ -96,7 +162,7 @@
                 }
             },
             "total_hours": "12",
-            "disciplines": ["Физика", "Веб-разработка", "Современный дизайн", "История исскувств"]
+            "disciplines": ["Физика (Лекция)", "Физика (Практика)", "Веб-разработка", "Современный дизайн (Лекция)", "Современный дизайн (Практика)", "История исскувств"]
         },
         {
             "first_name": "Эмиль",
@@ -150,8 +216,8 @@
                 }
             },
             "total_hours": "20",
-            "disciplines": ["Иностранный язык", "Безопасность жизнедеятельности", 
-                "История исскувств", "Современный дизайн"]
+            "disciplines": ["Иностранный язык", "Безопасность жизнедеятельности (Лекция)", "Безопасность жизнедеятельности (Практика)",
+                "История исскувств", "Современный дизайн (Лекция)", "Современный дизайн (Практика)"]
         },
         {
             "first_name": "Ефим",
@@ -169,7 +235,7 @@
                 }
             },
             "total_hours": "18",
-            "disciplines": ["Физика", "Теория вероятнотей", "Работа на фрезеровочных станках", "Линейная алгебра"]
+            "disciplines": ["Физика (Лекция)", "Физика (Практика)", "Теория вероятнотей (Лекция)", "Теория вероятнотей (Практика)", "Работа на фрезеровочных станках", "Линейная алгебра (Лекция)", "Линейная алгебра (Практика)"]
         },
         {
             "first_name": "Антон",
@@ -187,7 +253,7 @@
                 }
             },
             "total_hours": "22",
-            "disciplines": ["Программирование мобильных приложений", "Современный дизайн",
+            "disciplines": ["Программирование мобильных приложений", "Современный дизайн (Лекция)",
                  "Аналитика информационной безопасности", "Основы сетевых технологий"]
         },
         {
@@ -224,7 +290,7 @@
                 }
             },
             "total_hours": "18",
-            "disciplines": ["Линейная алгебра", "Безопасность жизнедеятельности", "Теория вероятнотей", "Сопротивление материалов"]
+            "disciplines": ["Линейная алгебра (Лекция)", "Линейная алгебра (Практика)", "Безопасность жизнедеятельности (Лекция)", "Теория вероятнотей (Лекция)", "Теория вероятнотей (Практика)", "Сопротивление материалов"]
         },
         {
             "first_name": "Даниа",
@@ -242,7 +308,7 @@
                 }
             },
             "total_hours": "24",
-            "disciplines": ["Физика", "Теория вероятнотей", "Линейная алгебра", "Безопасность жизнедеятельности"]
+            "disciplines": ["Физика (Лекция)", "Теория вероятнотей (Лекция)", "Линейная алгебра (Лекция)", "Безопасность жизнедеятельности (Лекция)"]
         }
     ],
     "TrainingDirection": [
@@ -4218,23 +4284,33 @@
     "Building": [
         {
             "name": "ул. Павла Корчагина",
-            "code": "V"
+            "code": "V",
+            "primary_color": "#e6ad12",
+            "secondary_color": "#ffffff"
         },
         {
             "name": "ул. Автозаводская",
-            "code": "A"
+            "code": "A",
+            "primary_color": "#45d974",
+            "secondary_color": "#ffffff"
         },
         {
             "name": "ул. Большая Семеновская",
-            "code": "E"
+            "code": "E",
+            "primary_color": "#160bde",
+            "secondary_color": "#ffffff"
         },
         {
             "name": "ул. Прянишникова",
-            "code": "P"
+            "code": "P",
+            "primary_color": "#ffffff",
+            "secondary_color": "#000000"
         },
         {
             "name": "ул. Садовая-Спасская",
-            "code": "S"
+            "code": "S",
+            "primary_color": "#ffffff",
+            "secondary_color": "#000000"
         }
     ]
 }
