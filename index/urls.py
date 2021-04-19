@@ -7,6 +7,7 @@ from index.lecture_hall.views import LectureHallViewSet
 from index.lesson.views import LessonViewSet
 from index.teacher.views import TeacherViewSet
 from index.training_direction.views import TrainingDirectionViewSet
+from index.building.views import BuildingViewSet
 from index.flow.views import FlowViewSet
 from rest_auth.views import (
     LoginView, LogoutView, PasswordChangeView, UserDetailsView,
@@ -28,6 +29,7 @@ router.register(r'lesson', LessonViewSet, basename='Lesson')
 router.register(r'teacher', TeacherViewSet, basename='Teacher')
 router.register(r'training_direction', TrainingDirectionViewSet, basename='TrainingDirection')
 router.register(r'flow', FlowViewSet, basename='Flow')
+router.register(r'building', BuildingViewSet, basename='Building')
 
 
 
