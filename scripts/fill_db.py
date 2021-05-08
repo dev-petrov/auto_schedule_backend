@@ -55,8 +55,8 @@ def main():
         set_education_plans()
         set_lecture_halls()
         set_lessons()
-        User.objects.create_superuser('admin', email='admin@easytable.site', password='encrypted_pass')
-        print('Admin login: admin; admin pass: encrypted_pass')
+        User.objects.create_superuser('admin', email='admin@easytable.site', password='1234')
+        print('Admin login: admin; admin pass: 1234')
 
 def set_buildings():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
