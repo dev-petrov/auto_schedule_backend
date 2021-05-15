@@ -50,11 +50,14 @@ class TrainingDirectionSerializer(serializers.ModelSerializer):
 
     def _set_building_constraints(self, constraints, pk):
         ids_to_delete = []
+        update_ordering = {}
         constraints_to_create = []
         for constraint in constraints:
             if constraint.get('id'):
                 if constraint.get('remove'):
                     ids_to_delete.append(constraint['id'])
+                else:
+                    update_ordering[constraint['id']] = constraint['ordering']
                 continue
             constraints_to_create.append(
                 BuildingTrainingDirectionConstraint(
@@ -65,6 +68,10 @@ class TrainingDirectionSerializer(serializers.ModelSerializer):
             )
         BuildingTrainingDirectionConstraint.objects.filter(id__in=ids_to_delete).delete()
         BuildingTrainingDirectionConstraint.objects.bulk_create(constraints_to_create)
+        buildings_to_update = list(BuildingTrainingDirectionConstraint.objects.filter(id__in=update_ordering.keys()))
+        for building in buildings_to_update:
+            building.ordering = update_ordering[building.id]
+        BuildingTrainingDirectionConstraint.objects.bulk_update(buildings_to_update, ['ordering',])
 
 
     def create(self, validated_data):
