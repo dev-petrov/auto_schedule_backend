@@ -36,7 +36,7 @@ class Discipline(models.Model):
         (TYPE_LAB, 'Лаб. работа'),
     ]
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=256)
     prof_type = models.CharField(max_length=1, choices=PROF_TYPES, default=PROF_TYPE_SIMPLE)
     constraints = models.ForeignKey(ConstraintCollection, on_delete=models.PROTECT)
     type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
