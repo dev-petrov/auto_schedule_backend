@@ -5,7 +5,7 @@ import codecs
 from index.models import ConstraintCollection
 from django.contrib.auth.models import User
 from django.db import transaction
-from algo.algov1 import Algorythm
+from algo.algov2 import AlgoV2
 '''
 Модуль для заполнения базы данных тестовыми данными.
 
@@ -161,7 +161,7 @@ def set_lecture_halls():
 
 
 def set_lessons():
-    a = Algorythm()
+    a = AlgoV2()
     schedule = a.create_schedule()
     Lesson.objects.bulk_create(
         Lesson(**row)
