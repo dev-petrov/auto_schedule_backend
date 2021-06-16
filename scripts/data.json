@@ -1,151 +1,535 @@
 {
     "Discipline": [
         {
-            "title": "Линейная алгебра (Лекция)",
+            "title": "Линейная алгебра",
             "prof_type": "S",
             "need_projector": "False",
-            "need_big_blackboard": "True",
-            "type": "L",
-            "short_name": "ЛА(Л)"
-        },
-        {
-            "title": "Линейная алгебра (Практика)",
-            "prof_type": "S",
-            "need_projector": "False",
-            "need_big_blackboard": "True",
-            "type": "P",
-            "short_name": "ЛА(П)"
+            "need_big_blackboard": "True"
         },
         {
             "title": "Иностранный язык", 
             "prof_type": "S",
             "need_projector": "False",
-            "need_big_blackboard": "True",
-            "type": "P",
-            "short_name": "ИнЯз"
+            "need_big_blackboard": "True"
         },
         {
-            "title": "Безопасность жизнедеятельности (Лекция)", 
+            "title": "Безопасность жизнедеятельности", 
             "prof_type": "S",
             "need_projector": "True", 
-            "need_big_blackboard": "False",
-            "type": "L",
-            "short_name": "БЖД(Л)"
-        },
-        {
-            "title": "Безопасность жизнедеятельности (Практика)", 
-            "prof_type": "S",
-            "need_projector": "True", 
-            "need_big_blackboard": "False",
-            "type": "P",
-            "short_name": "БЖД(П)"
+            "need_big_blackboard": "False"
         },
         {
             "title": "Программирование мобильных приложений",
             "prof_type": "C",
             "need_projector": "True", 
-            "need_big_blackboard": "False",
-            "type": "LB",
-            "short_name": "ПМП"
+            "need_big_blackboard": "False"
         },
         {
-            "title": "Теория вероятнотей (Лекция)",
+            "title": "Теория вероятнотей",
             "prof_type": "S",
             "need_projector": "False",
-            "need_big_blackboard": "True",
-            "type": "L",
-            "short_name": "ТВ(Л)"
-        },
-        {
-            "title": "Теория вероятнотей (Практика)",
-            "prof_type": "S",
-            "need_projector": "False",
-            "need_big_blackboard": "True",
-            "type": "P",
-            "short_name": "ТВ(П)"
+            "need_big_blackboard": "True"
         },
         {
             "title": "Аналитика информационной безопасности", 
             "prof_type": "S",
             "need_projector": "True",
-            "need_big_blackboard": "False",
-            "type": "L",
-            "short_name": "АИБ"
+            "need_big_blackboard": "False"
         },
         {
             "title": "Основы сетевых технологий", 
             "prof_type": "C",
             "need_projector": "True", 
-            "need_big_blackboard": "False",
-            "type": "LB",
-            "short_name": "ОСТ"
+            "need_big_blackboard": "False"
         },
         {
             "title": "Веб-разработка", 
             "prof_type": "C",
             "need_projector": "True", 
-            "need_big_blackboard": "False",
-            "type": "LB",
-            "short_name": "ВР"
+            "need_big_blackboard": "False"
         },
         {
-            "title": "Физика (Лекция)",
+            "title": "Физика",
             "prof_type": "S",
             "need_projector": "True", 
-            "need_big_blackboard": "True",
-            "type": "L",
-            "short_name": "Ф(Л)"
-        },
-        {
-            "title": "Физика (Практика)",
-            "prof_type": "S",
-            "need_projector": "True", 
-            "need_big_blackboard": "True",
-            "type": "P",
-            "short_name": "Ф(П)"
+            "need_big_blackboard": "True"
         },
         {
             "title": "Сопротивление материалов", 
             "prof_type": "S",
             "need_projector": "False",
-            "need_big_blackboard": "True",
-            "type": "L",
-            "short_name": "СМ"
+            "need_big_blackboard": "True"
         },
         {
             "title": "История исскувств",
             "prof_type": "S",
             "need_projector": "True", 
-            "need_big_blackboard": "False",
-            "type": "L",
-            "short_name": "ИстИск"
+            "need_big_blackboard": "False"
         },
         {
-            "title": "Современный дизайн (Лекция)", 
+            "title": "Современный дизайн", 
             "prof_type": "D",
             "need_projector": "True", 
-            "need_big_blackboard": "False",
-            "type": "L",
-            "short_name": "СД(Л)"
-        },
-        {
-            "title": "Современный дизайн (Практика)", 
-            "prof_type": "D",
-            "need_projector": "True", 
-            "need_big_blackboard": "False",
-            "type": "P",
-            "short_name": "СД(П)"
+            "need_big_blackboard": "False"
         },
         {
             "title": "Работа на фрезеровочных станках",
             "prof_type": "M",
             "need_projector": "False",
-            "need_big_blackboard": "False",
-            "type": "P",
-            "short_name": "РФС"
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Исследование и моделирование бизнес-процессов и структур в области информационной безопасности",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Аудит информационной безопасности",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Математические основы криптологии",
+            "prof_type": "M",
+            "need_projector": "False",
+            "need_big_blackboard": "True"
+        },
+        {
+            "title": "История",
+            "prof_type": "M",
+            "need_projector": "False",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Организация и управление службой защиты информации на предприятии",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Элективные дисциплины по физической культуре и спорту",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Программирование криптографических алгоритмов",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        { 
+            "title": "Трехмерные модели в веб-приложениях",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Разработка в КИС",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Проектирование информационных систем",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Математическая логика и теория алгоритмов в программировании",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Реклама в Веб и Социальных медиа",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Веб-аналитика",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Иллюстрирование печатных и электронных изданий",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Искусство иллюстрации",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Живопись",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Рисунок",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Теория композиции",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Электротехника и промышленная электроника",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Изобретения и патентоведение",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Основы научных исследований",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Техника автоматизированного производства ЭНМ",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Технология и оборудование производства ЭНМ и изделий",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Механика твердых дисперсных сред в процессах химической технологии",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Основы технологического предпринимательства",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Электротехника и электроника",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Механика грунтов",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Математика",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Теоретическая механика",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Основы теоретических и экспериментальных исследований",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Гидропневмоавтоматика и гидропривод",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Философия",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
+        },
+        {
+            "title": "Материаловедение",
+            "prof_type": "M",
+            "need_projector": "True",
+            "need_big_blackboard": "False"
         }
     ],
     "Teacher": [
+        {
+            "first_name": "Максим",
+            "last_name": "Собакин",
+            "middle_name": "Геннадьевич",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [false, true, false, true, true, false, true], 
+                    "2": [false, true, true, true, true, false, false], 
+                    "3": [false, true, true, true, true, true, true], 
+                    "4": [false, true, true, true, false, true, false], 
+                    "5": [false, true, true, true, true, true, true], 
+                    "6": [false, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["История"]
+        },
+        {
+            "first_name": "Максим",
+            "last_name": "Собакин",
+            "middle_name": "Геннадьевич",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [false, true, false, true, true, false, true], 
+                    "2": [false, true, true, true, true, false, false], 
+                    "3": [false, true, true, true, true, true, true], 
+                    "4": [false, true, true, true, false, true, false], 
+                    "5": [false, true, true, true, true, true, true], 
+                    "6": [false, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Организация и управление службой защиты информации на предприятии", "Аудит информационной безопасности"]
+        },
+        {
+            "first_name": "Сергей",
+            "last_name": "Лобко",
+            "middle_name": "Никитич",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [false, true, false, true, true, false, true], 
+                    "2": [false, true, true, true, true, false, false], 
+                    "3": [false, true, true, true, true, true, true], 
+                    "4": [false, true, true, true, false, true, false], 
+                    "5": [false, true, true, true, true, true, true], 
+                    "6": [false, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Элективные дисциплины по физической культуре и спорту"]
+        },
+        {
+            "first_name": "Олег",
+            "last_name": "Лобко",
+            "middle_name": "Никитич",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [false, true, false, true, true, false, true], 
+                    "2": [false, true, true, true, true, false, false], 
+                    "3": [false, true, true, true, true, true, true], 
+                    "4": [false, true, true, true, false, true, false], 
+                    "5": [false, true, true, true, true, true, true], 
+                    "6": [false, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Элективные дисциплины по физической культуре и спорту"]
+        },
+        {
+            "first_name": "Кирилл",
+            "last_name": "Петро",
+            "middle_name": "Петрович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [false, true, false, true, true, false, true], 
+                    "2": [false, true, true, true, true, false, false], 
+                    "3": [false, true, true, true, true, true, true], 
+                    "4": [false, true, true, true, false, true, false], 
+                    "5": [false, true, true, true, true, true, true], 
+                    "6": [false, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Программирование криптографических алгоритмов","Математические основы криптологии"]
+        },
+        {
+            "first_name": "Кирилл",
+            "last_name": "Самойлов",
+            "middle_name": "Сергеевич",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [false, true, false, true, true, false, true], 
+                    "2": [false, true, true, true, true, false, false], 
+                    "3": [false, true, true, true, true, true, true], 
+                    "4": [false, true, true, true, false, true, false], 
+                    "5": [false, true, true, true, true, true, true], 
+                    "6": [false, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Математическая логика и теория алгоритмов в программировании","Проектирование информационных систем", "Разработка в КИС", "Трехмерные модели в веб-приложениях"]
+        },
+        {
+            "first_name": "Жармат",
+            "last_name": "Петриченко",
+            "middle_name": "Олегович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, false, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "12",
+            "disciplines": ["Реклама в Веб и Социальных медиа","Веб-аналитика", "Исследование и моделирование бизнес-процессов и структур в области информационной безопасности"]
+        },
+        {
+            "first_name": "Солмат",
+            "last_name": "Хачатрян",
+            "middle_name": "Тугралович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, false, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "12",
+            "disciplines": ["Реклама в Веб и Социальных медиа","Веб-аналитика"]
+        },
+        {
+            "first_name": "Семен",
+            "last_name": "Петров",
+            "middle_name": "Семенович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, false, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, false, true, true, true, false, true]
+                }
+            },
+            "total_hours": "12",
+            "disciplines": ["Рисунок","Живопись","Искусство иллюстрации", "Теория композиции", "Иллюстрирование печатных и электронных изданий"]
+        },
+        {
+            "first_name": "Даниил",
+            "last_name": "Червонный",
+            "middle_name": "Данилович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
+                }
+            },
+            "total_hours": "14",
+            "disciplines": ["Электротехника и промышленная электроника","Изобретения и патентоведение","Основы технологического предпринимательства", "Технология и оборудование производства ЭНМ и изделий", "Техника автоматизированного производства ЭНМ"]
+        },
+        {
+            "first_name": "Олег",
+            "last_name": "Бойка",
+            "middle_name": "Петрович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
+                }
+            },
+            "total_hours": "14",
+            "disciplines": ["Механика грунтов", "Механика твердых дисперсных сред в процессах химической технологии", "Основы научных исследований"]
+        },
+        {
+            "first_name": "Сергей",
+            "last_name": "Жидкий",
+            "middle_name": "Юрьевич",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Философия", "Основы научных исследований"]
+        },
+        {
+            "first_name": "Алишер",
+            "last_name": "Клютко",
+            "middle_name": "Тагирович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Основы теоретических и экспериментальных исследований", "Математика", "Электротехника и электроника"]
+        },
+        {
+            "first_name": "Олег",
+            "last_name": "Нечипоренко",
+            "middle_name": "Сергеевич",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Материаловедение", "Гидропневмоавтоматика и гидропривод", "Теоретическая механика"]
+        },
         {
             "first_name": "Денис",
             "last_name": "Васильев",
@@ -162,7 +546,7 @@
                 }
             },
             "total_hours": "12",
-            "disciplines": ["Физика (Лекция)", "Физика (Практика)", "Веб-разработка", "Современный дизайн (Лекция)", "Современный дизайн (Практика)", "История исскувств"]
+            "disciplines": ["Физика", "Веб-разработка", "Современный дизайн", "История исскувств"]
         },
         {
             "first_name": "Эмиль",
@@ -216,8 +600,8 @@
                 }
             },
             "total_hours": "20",
-            "disciplines": ["Иностранный язык", "Безопасность жизнедеятельности (Лекция)", "Безопасность жизнедеятельности (Практика)",
-                "История исскувств", "Современный дизайн (Лекция)", "Современный дизайн (Практика)"]
+            "disciplines": ["Иностранный язык", "Безопасность жизнедеятельности", 
+                "История исскувств", "Современный дизайн"]
         },
         {
             "first_name": "Ефим",
@@ -235,7 +619,7 @@
                 }
             },
             "total_hours": "18",
-            "disciplines": ["Физика (Лекция)", "Физика (Практика)", "Теория вероятнотей (Лекция)", "Теория вероятнотей (Практика)", "Работа на фрезеровочных станках", "Линейная алгебра (Лекция)", "Линейная алгебра (Практика)"]
+            "disciplines": ["Физика", "Теория вероятнотей", "Работа на фрезеровочных станках", "Линейная алгебра"]
         },
         {
             "first_name": "Антон",
@@ -253,7 +637,7 @@
                 }
             },
             "total_hours": "22",
-            "disciplines": ["Программирование мобильных приложений", "Современный дизайн (Лекция)",
+            "disciplines": ["Программирование мобильных приложений", "Современный дизайн",
                  "Аналитика информационной безопасности", "Основы сетевых технологий"]
         },
         {
@@ -290,7 +674,7 @@
                 }
             },
             "total_hours": "18",
-            "disciplines": ["Линейная алгебра (Лекция)", "Линейная алгебра (Практика)", "Безопасность жизнедеятельности (Лекция)", "Теория вероятнотей (Лекция)", "Теория вероятнотей (Практика)", "Сопротивление материалов"]
+            "disciplines": ["Линейная алгебра", "Безопасность жизнедеятельности", "Теория вероятнотей", "Сопротивление материалов"]
         },
         {
             "first_name": "Даниа",
@@ -308,7 +692,7 @@
                 }
             },
             "total_hours": "24",
-            "disciplines": ["Физика (Лекция)", "Теория вероятнотей (Лекция)", "Линейная алгебра (Лекция)", "Безопасность жизнедеятельности (Лекция)"]
+            "disciplines": ["Физика", "Теория вероятнотей", "Линейная алгебра", "Безопасность жизнедеятельности"]
         }
     ],
     "TrainingDirection": [
@@ -4271,46 +4655,28 @@
             "prof_type": "S",
             "has_projector": "True",
             "has_big_blackboard": "True"
-        },
-        {
-            "spaciousness": "140",
-            "code": "H570",
-            "building": "E",
-            "prof_type": "M",
-            "has_projector": "True",
-            "has_big_blackboard": "True"
         }
     ],
     "Building": [
         {
             "name": "ул. Павла Корчагина",
-            "code": "V",
-            "primary_color": "#e6ad12",
-            "secondary_color": "#ffffff"
+            "code": "V"
         },
         {
             "name": "ул. Автозаводская",
-            "code": "A",
-            "primary_color": "#45d974",
-            "secondary_color": "#ffffff"
+            "code": "A"
         },
         {
             "name": "ул. Большая Семеновская",
-            "code": "E",
-            "primary_color": "#160bde",
-            "secondary_color": "#ffffff"
+            "code": "E"
         },
         {
             "name": "ул. Прянишникова",
-            "code": "P",
-            "primary_color": "#ffffff",
-            "secondary_color": "#000000"
+            "code": "P"
         },
         {
             "name": "ул. Садовая-Спасская",
-            "code": "S",
-            "primary_color": "#ffffff",
-            "secondary_color": "#000000"
+            "code": "S"
         }
     ]
 }
