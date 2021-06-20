@@ -143,6 +143,78 @@
             "need_big_blackboard": "False",
             "type": "P",
             "short_name": "РФС"
+        },
+        {
+            "title": "Аудит информационной безопасности (Лекция)",
+            "prof_type": "C",
+            "need_projector": "True",
+            "need_big_blackboard": "False",
+            "type": "L",
+            "short_name": "АуИБ(Л)"
+        },
+        {
+            "title": "Аудит информационной безопасности (Практика)",
+            "prof_type": "C",
+            "need_projector": "True",
+            "need_big_blackboard": "False",
+            "type": "P",
+            "short_name": "АуИБ(П)"
+        },
+        {
+            "title": "Математические основы криптологии (Лекция)",
+            "prof_type": "C",
+            "need_projector": "True",
+            "need_big_blackboard": "True",
+            "type": "L",
+            "short_name": "МОК(Л)"
+        },
+        {
+            "title": "Математические основы криптологии (Практика)",
+            "prof_type": "C",
+            "need_projector": "True",
+            "need_big_blackboard": "True",
+            "type": "P",
+            "short_name": "МОК(П)"
+        },
+        {
+            "title": "История",
+            "prof_type": "S",
+            "need_projector": "True",
+            "need_big_blackboard": "False",
+            "type": "L",
+            "short_name": "Ист"
+        },
+        {
+            "title": "Организация и управление службой защиты информации на предприятии (Лекция)",
+            "prof_type": "C",
+            "need_projector": "True",
+            "need_big_blackboard": "False",
+            "type": "L",
+            "short_name": "ОргУпрСЗИ (Л)"
+        },
+        {
+            "title": "Организация и управление службой защиты информации на предприятии (Практика)",
+            "prof_type": "C",
+            "need_projector": "True",
+            "need_big_blackboard": "False",
+            "type": "P",
+            "short_name": "ОргУпрСЗИ (П)"
+        },
+        {
+            "title": "Программирование криптографических алгоритмов (Лекция)",
+            "prof_type": "C",
+            "need_projector": "True",
+            "need_big_blackboard": "False",
+            "type": "L",
+            "short_name": "ПКА (П)"
+        },
+        {
+            "title": "Программирование криптографических алгоритмов (Практика)",
+            "prof_type": "C",
+            "need_projector": "True",
+            "need_big_blackboard": "False",
+            "type": "P",
+            "short_name": "ПКА (П)"
         }
     ],
     "Teacher": [
