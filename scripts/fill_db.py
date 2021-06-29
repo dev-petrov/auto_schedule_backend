@@ -1,3 +1,4 @@
+from index.education_plan.utils import upload_plan
 from index.models import *
 import json
 import random
@@ -5,7 +6,7 @@ import codecs
 from index.models import ConstraintCollection
 from django.contrib.auth.models import User
 from django.db import transaction
-from algo.algov1 import Algorythm
+from algo.algov2 import AlgoV2
 '''
 Модуль для заполнения базы данных тестовыми данными.
 
@@ -52,10 +53,11 @@ def main():
         set_training_directions()
         set_flows()
         set_groups()
-        set_education_plans()
+        # set_education_plans()
         set_lecture_halls()
+        upload_plan('scripts/plan.xlsx', {'type': 'A'})
         set_lessons()
-        User.objects.create_superuser('admin', email='admin@easytable.site', password='1234')
+        User.objects.create_superuser('admin', email='admin@netproj.ru', password='1234')
         print('Admin login: admin; admin pass: 1234')
 
 def set_buildings():
@@ -85,7 +87,7 @@ def set_teachers():
              middle_name=d['middle_name'], total_hours=d['total_hours'])
             for day, constraints in d['constraints']['day_constraints'].items():
                 for i, available in enumerate(constraints):
-                    if available:
+                    if not available:
                         TeacherLessonConstraint.objects.create(
                             lesson=i + 1,
                             day_of_week=day,
@@ -106,7 +108,7 @@ def set_training_directions():
             )
             for day, constraints in d['constraints']['day_constraints'].items():
                 for i, available in enumerate(constraints):
-                    if available:
+                    if not available:
                         LessonTrainingDirectionConstraint.objects.create(
                             lesson=i + 1,
                             day_of_week=day,
@@ -161,7 +163,7 @@ def set_lecture_halls():
 
 
 def set_lessons():
-    a = Algorythm()
+    a = AlgoV2()
     schedule = a.create_schedule()
     Lesson.objects.bulk_create(
         Lesson(**row)
