@@ -144,7 +144,7 @@
             "type": "P",
             "short_name": "РФС"
         },
-        {
+        {---
             "title": "Аудит информационной безопасности (Лекция)",
             "prof_type": "C",
             "need_projector": "True",
@@ -152,7 +152,7 @@
             "type": "L",
             "short_name": "АуИБ(Л)"
         },
-        {
+        {---
             "title": "Аудит информационной безопасности (Практика)",
             "prof_type": "C",
             "need_projector": "True",
@@ -160,7 +160,7 @@
             "type": "P",
             "short_name": "АуИБ(П)"
         },
-        {
+        {---
             "title": "Математические основы криптологии (Лекция)",
             "prof_type": "C",
             "need_projector": "True",
@@ -168,7 +168,7 @@
             "type": "L",
             "short_name": "МОК(Л)"
         },
-        {
+        {---
             "title": "Математические основы криптологии (Практика)",
             "prof_type": "C",
             "need_projector": "True",
@@ -184,7 +184,7 @@
             "type": "L",
             "short_name": "Ист"
         },
-        {
+        {---
             "title": "Организация и управление службой защиты информации на предприятии (Лекция)",
             "prof_type": "C",
             "need_projector": "True",
@@ -192,7 +192,7 @@
             "type": "L",
             "short_name": "ОргУпрСЗИ (Л)"
         },
-        {
+        {---
             "title": "Организация и управление службой защиты информации на предприятии (Практика)",
             "prof_type": "C",
             "need_projector": "True",
@@ -200,7 +200,7 @@
             "type": "P",
             "short_name": "ОргУпрСЗИ (П)"
         },
-        {
+        {---
             "title": "Программирование криптографических алгоритмов (Лекция)",
             "prof_type": "C",
             "need_projector": "True",
@@ -208,7 +208,7 @@
             "type": "L",
             "short_name": "ПКА (П)"
         },
-        {
+        {---
             "title": "Программирование криптографических алгоритмов (Практика)",
             "prof_type": "C",
             "need_projector": "True",
@@ -218,6 +218,96 @@
         }
     ],
     "Teacher": [
+        {
+            "first_name": "Вагабов",
+            "last_name": "Махач",
+            "middle_name": "Мустафаевич",
+            "constraints": {
+                "buildings_priority": ["A", "E", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, true, false], 
+                    "2": [true, true, true, true, true, true, false], 
+                    "3": [true, true, true, true, true, true, false], 
+                    "4": [true, true, true, true, true, true, false], 
+                    "5": [true, true, true, true, true, true, false], 
+                    "6": [true, true, true, true, true, true, false]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["История"]
+        },
+        {
+            "first_name": "Рагозин",
+            "last_name": "Юрий",
+            "middle_name": "Николаевич",
+            "constraints": {
+                "buildings_priority": ["A", "E", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, false], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, false, false], 
+                    "4": [true, true, true, true, true, false, false], 
+                    "5": [true, true, true, true, true, false, false], 
+                    "6": [true, true, true, true, true, false, false]
+                }
+            },
+            "total_hours": "14",
+            "disciplines": ["Организация и управление службой защиты информации на предприятии (Лекция)", "Организация и управление службой защиты информации на предприятии (Практика)"]
+        },
+        {
+            "first_name": "Бутакова",
+            "last_name": "Наталья",
+            "middle_name": "Георгиевна",
+            "constraints": {
+                "buildings_priority": ["A", "E", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
+                }
+            },
+            "total_hours": "10",
+            "disciplines": ["Математические основы криптологии (Лекция)","Математические основы криптологии (Практика)", "Программирование криптографических алгоритмов (Лекция)" , "Программирование криптографических алгоритмов (Практика)"]
+        },
+        {
+            "first_name": "Перов",
+            "last_name": "Андрей",
+            "middle_name": "Александровчи",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, true, true], 
+                    "2": [true, true, true, true, true, true, true], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, true, true, true], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, true, true]
+                }
+            },
+            "total_hours": "14",
+            "disciplines": ["Математические основы криптологии (Практика)", "Программирование криптографических алгоритмов (Практика)"]
+        },
+        {
+            "first_name": "Кесель",
+            "last_name": "Сергей",
+            "middle_name": "Александрович",
+            "constraints": {
+                "buildings_priority": ["E", "A", "P", "S", "V"],
+                "day_constraints": {
+                    "1": [true, true, true, true, true, false, true], 
+                    "2": [true, true, true, true, true, false, false], 
+                    "3": [true, true, true, true, true, true, true], 
+                    "4": [true, true, true, true, false, true, false], 
+                    "5": [true, true, true, true, true, true, true], 
+                    "6": [true, true, true, true, true, false, true]
+                }
+            },
+            "total_hours": "13",
+            "disciplines": ["Аудит информационной безопасности (Лекция)", "Аудит информационной безопасности (Практика)"]
+        },
         {
             "first_name": "Денис",
             "last_name": "Васильев",
