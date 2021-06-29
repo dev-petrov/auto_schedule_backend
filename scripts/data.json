@@ -219,8 +219,8 @@
     ],
     "Teacher": [
         {
-            "first_name": "Вагабов",
-            "last_name": "Махач",
+            "first_name": "Махач",
+            "last_name": "Вагабов",
             "middle_name": "Мустафаевич",
             "constraints": {
                 "buildings_priority": ["A", "E", "P", "S", "V"],
@@ -237,8 +237,8 @@
             "disciplines": ["История"]
         },
         {
-            "first_name": "Рагозин",
-            "last_name": "Юрий",
+            "first_name": "Юрий",
+            "last_name": "Рагозин",
             "middle_name": "Николаевич",
             "constraints": {
                 "buildings_priority": ["A", "E", "P", "S", "V"],
@@ -255,8 +255,8 @@
             "disciplines": ["Организация и управление службой защиты информации на предприятии (Лекция)", "Организация и управление службой защиты информации на предприятии (Практика)"]
         },
         {
-            "first_name": "Бутакова",
-            "last_name": "Наталья",
+            "first_name": "Наталья",
+            "last_name": "Бутакова",
             "middle_name": "Георгиевна",
             "constraints": {
                 "buildings_priority": ["A", "E", "P", "S", "V"],
@@ -273,9 +273,9 @@
             "disciplines": ["Математические основы криптологии (Лекция)","Математические основы криптологии (Практика)", "Программирование криптографических алгоритмов (Лекция)" , "Программирование криптографических алгоритмов (Практика)"]
         },
         {
-            "first_name": "Перов",
-            "last_name": "Андрей",
-            "middle_name": "Александровчи",
+            "first_name": "Артем",
+            "last_name": "Перов",
+            "middle_name": "Александрович",
             "constraints": {
                 "buildings_priority": ["E", "A", "P", "S", "V"],
                 "day_constraints": {
@@ -291,8 +291,8 @@
             "disciplines": ["Математические основы криптологии (Практика)", "Программирование криптографических алгоритмов (Практика)"]
         },
         {
-            "first_name": "Кесель",
-            "last_name": "Сергей",
+            "first_name": "Сергей",
+            "last_name": "Кесель",
             "middle_name": "Александрович",
             "constraints": {
                 "buildings_priority": ["E", "A", "P", "S", "V"],
@@ -479,7 +479,7 @@
             "name": "Прикладная информатика",
             "type": "B",
             "constraints": {
-                "buildings": ["E", "A", "P", "S", "V"],
+                "buildings": ["E", "A", "V"],
                 "day_constraints": {
                     "1": [true, true, true, true, true, true, false], 
                     "2": [true, true, true, true, true, true, false], 
@@ -495,14 +495,14 @@
             "name": "Информационная безопасность",
             "type": "B",
             "constraints": {
-                "buildings": ["V", "P", "A", "S", "E"],
+                "buildings": ["A", "E", "V"],
                 "day_constraints": {
                     "1": [true, true, true, true, true, true, false], 
                     "2": [true, true, true, true, true, true, false], 
                     "3": [true, true, true, true, true, true, false], 
                     "4": [true, true, true, true, true, true, false], 
                     "5": [true, true, true, true, true, true, false], 
-                    "6": [true, true, true, true, true, true, false]
+                    "6": [false, false, false, false, false, false, false]
                 }
                 
             } 
@@ -512,7 +512,7 @@
             "name": "Информационная безопасность",
             "type": "S",
             "constraints": {
-                "buildings": ["E", "S", "P", "A", "V"],
+                "buildings": ["A", "E", "V"],
                 "day_constraints": {
                     "1": [false, true, true, true, true, true, true], 
                     "2": [false, true, true, true, true, true, true], 
@@ -529,7 +529,7 @@
             "name": "Веб-разработка",
             "type": "B",
             "constraints": {
-                "buildings": ["S", "A", "P", "E", "V"],
+                "buildings": ["E", "A", "V"],
                 "day_constraints": {
                     "1": [true, true, true, true, true, false, false], 
                     "2": [true, true, true, true, true, false, false], 
@@ -545,7 +545,7 @@
             "name": "Лингвистика",
             "type": "B",
             "constraints": {
-                "buildings": ["S", "A", "P", "E", "V"],
+                "buildings": ["V", "A", "E", "P", "S"],
                 "day_constraints": {
                     "1": [true, false, true, true, true, false, true], 
                     "2": [true, true, false, true, true, true, false], 

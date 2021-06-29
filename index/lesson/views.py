@@ -1,5 +1,7 @@
+from algo.algov2 import AlgoV2
 from index.models import Lesson, Teacher, Group, EducationPlan, LectureHall, Discipline, TeacherDetails
 from rest_framework import serializers, viewsets
+from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.db.models import Q, F
 from django_filters.rest_framework import FilterSet, CharFilter
@@ -131,30 +133,14 @@ class LessonViewSet(viewsets.ModelViewSet):
     serializer_class = LessonSerializer
     filterset_class = LessonFilter
 
-    # def list(self, request):
-    #     query = self.filter_queryset(self.queryset).select_related('discipline', 'lecture_hall', 'teacher', 'group')
-    #     dtype = request.query_params.get('dtype', 'a')
-    #     if dtype.lower() == 't':
-    #         lessons = list(query.order_by('teacher_id', 'day_of_week', 'lesson'))
-    #         data = {}
-    #         for lesson in lessons:
-    #             key = lesson.teacher_id
-    #             if not key in data:
-    #                 data[key] = []
-    #             data[key].append(
-    #                 LessonSerializer(lesson).data
-    #             )
-    #     elif dtype.lower() == 'g':
-    #         lessons = list(query.order_by('group_id', 'day_of_week', 'lesson'))
-    #         data = {}
-    #         for lesson in lessons:
-    #             key = lesson.group_id
-    #             if not key in data:
-    #                 data[key] = []
-    #             data[key].append(
-    #                 LessonSerializer(lesson).data
-    #             )
-    #     else:
-    #         data = LessonSerializer(query.order_by('group_id', 'day_of_week', 'lesson'), many=True).data
-    #     return Response(data)
+    @action(detail=False, methods=['post',])
+    def create_schedule(self, request):
+        algo = AlgoV2()
+        schedule = algo.create_schedule()
+        Lesson.objects.all().delete()
+        Lesson.objects.bulk_create(
+            Lesson(**row)
+            for i, row in schedule.iterrows()
+        )
+        return Response()
     

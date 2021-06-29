@@ -34,39 +34,36 @@ class AlgoV2:
         return teachers.iloc[0]
     
     def _update_constraints(self, lessons, group, teacher):
-        g_constraints = pd.DataFrame(data=group.constraints)
-        t_constraints = pd.DataFrame(teacher.constraints)
+        g_constraints = group.constraints.copy()
+        t_constraints = teacher.constraints.copy()
         for day, lesson in lessons:
-            g_constraints = g_constraints.drop(g_constraints[(g_constraints.day_of_week==day)&(g_constraints.lesson==lesson)].index)
-            t_constraints = t_constraints.drop(t_constraints[(t_constraints.day_of_week==day)&(t_constraints.lesson==lesson)].index)
-
-        g_constraints.reset_index(drop=True, inplace=True)
-        t_constraints.reset_index(drop=True, inplace=True)
+            g_constraints.append({'lesson': lesson, 'day_of_week': day})
+            t_constraints.append({'lesson': lesson, 'day_of_week': day})
         
         g_constraints_arr = np.empty(1, dtype=object)
-        g_constraints_arr[0] = g_constraints.to_dict('records')
+        g_constraints_arr[0] = g_constraints
         t_constraints_arr = np.empty(1, dtype=object)
-        t_constraints_arr[0] = t_constraints.to_dict('records')
+        t_constraints_arr[0] = t_constraints
 
         self.groups.loc[self.groups.id==group.id, 'constraints'] = g_constraints_arr
         self.teachers.loc[self.teachers.id==teacher.id, 'constraints'] = t_constraints_arr
 
     def _get_lesson_time(self, teacher, group, count_of_lessons):
         INIT_DAYS = {
-            1: [False, False, False, False, False, False, False,],
-            2: [False, False, False, False, False, False, False,],
-            3: [False, False, False, False, False, False, False,],
-            4: [False, False, False, False, False, False, False,],
-            5: [False, False, False, False, False, False, False,],
-            6: [False, False, False, False, False, False, False,],
+            1: [True, True, True, True, True, True, True,],
+            2: [True, True, True, True, True, True, True,],
+            3: [True, True, True, True, True, True, True,],
+            4: [True, True, True, True, True, True, True,],
+            5: [True, True, True, True, True, True, True,],
+            6: [True, True, True, True, True, True, True,],
         }
         group_constraints = group.constraints
         teacher_constraints = teacher.constraints
         for les in group_constraints:
-            INIT_DAYS[les['day_of_week']][les['lesson'] - 1] = True
+            INIT_DAYS[les['day_of_week']][les['lesson'] - 1] = False
 
         for les in teacher_constraints:
-            INIT_DAYS[les['day_of_week']][les['lesson'] - 1] = True
+            INIT_DAYS[les['day_of_week']][les['lesson'] - 1] = False
 
         count_by_days_df = self.lessons.copy()
         count_by_days_df['cnt'] = 1
@@ -126,6 +123,7 @@ class AlgoV2:
                 else:
                     self._update_constraints(ideal_lessons, group, teacher)
                     return ideal_lessons
+            self._update_constraints(ideal_lessons, group, teacher)
             return lessons
         elif day != 0:
             self._update_constraints(ideal_lessons, group, teacher)
@@ -149,10 +147,15 @@ class AlgoV2:
         else:
             return ((0, 0),)         
 
-    def _get_lecture_hall(self, day, lesson):
+    def _get_lecture_hall(self, day, lesson, group, discipline):
         # tmp for test
+        l_halls = self.lecture_halls.copy()
+        l_halls['ordering'] = 999
+        for constraint in group.building_constraints:
+            l_halls.loc[l_halls.building==constraint['building'], 'ordering'] = constraint['ordering']
+        l_halls.drop(index=l_halls[l_halls.ordering==999].index, inplace=True)
         not_avalable = self.lessons.loc[(self.lessons.day_of_week==day)&(self.lessons.lesson==lesson)&-(pd.isna(self.lessons.lecture_hall_id)), 'lecture_hall_id'].astype('int64')
-        return self.lecture_halls[-self.lecture_halls.id.isin(not_avalable)].iloc[0]
+        return l_halls[-l_halls.id.isin(not_avalable)].sort_values(by='ordering').iloc[0]
 
     def create_schedule(self):
         for _, group in self.groups.sort_values(
@@ -162,8 +165,8 @@ class AlgoV2:
             for discipline in group.disciplines:
                 teacher = self._get_teacher(discipline=discipline['discipline'], count_of_lessons=discipline['lessons_in_week'])
                 if teacher is None:
-                    print('Noteacher')
-                    return
+                    print(f"No teacher {discipline['discipline']} lessons {discipline['lessons_in_week']}")
+                    return []
                 for i in range(discipline['lessons_in_week']):
                     self.lessons = self.lessons.append({"discipline_id": discipline['discipline'], "group_id": group.id, "teacher_id": teacher.id}, ignore_index=True)
         self.lessons = self.lessons.astype({'discipline_id': 'int64', 'group_id': 'int64', 'teacher_id': 'int64'})
@@ -181,11 +184,15 @@ class AlgoV2:
             else:
                 indexes = [i,]
                 times = self._get_lesson_time(teacher, group, 1)
+            if times[0] == (0, 0):
+                print(f'No time for {group.code} with teacher {teacher.last_name} and discipline {lesson.discipline_id}')
+                return []
             for index, i in enumerate(indexes):
                 self.lessons.loc[i, ['day_of_week', 'lesson']] = times[index]
         self.lessons = self.lessons.astype({'day_of_week': 'int64', 'lesson': 'int64'})
         for i, lesson in self.lessons.iterrows():
-            lecture_hall = self._get_lecture_hall(lesson.day_of_week, lesson.lesson)
+            group = self.groups[self.groups.id==lesson.group_id].iloc[0]
+            lecture_hall = self._get_lecture_hall(lesson.day_of_week, lesson.lesson, group, None)
             self.lessons.loc[i, 'lecture_hall_id'] = lecture_hall.id
 
         return self.lessons
