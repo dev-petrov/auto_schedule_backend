@@ -52,7 +52,6 @@ class Algorythm():
             teachers_count=Count('teachers'),
             week_hours=Sum(F('educationplan__lessons_in_week')),
         ).values())
-        print(self.disciplines)
         self.groups = pd.DataFrame(data=Group.objects.annotate(
             week_hours=Sum(F('educationplan__lessons_in_week')),
             constraints=F('training_direction__constraints')
@@ -255,23 +254,28 @@ class Algorythm():
         for _, group in self.groups.iterrows():
             education_plan = self.education_plan.loc[self.education_plan.group_id==group.id].sort_values(by='lessons_in_week', ascending=False,)
             while len(education_plan.loc[education_plan.lessons_in_week > 0]) != 0:
+                print(len(education_plan.loc[education_plan.lessons_in_week > 0]))
                 discipline = education_plan.loc[education_plan.lessons_in_week > 0].iloc[0]
                 disc_hours = discipline.lessons_in_week
                 lesson_times = [(0, 0),]
                 exclude_teachers = []
-                consider_teacher_constraints = True
-                while lesson_times[0][0] == 0: 
+                consider_teacher_constraints = False
+                while lesson_times[0][0] == 0 and discipline.lessons_in_week != 0: 
                     teacher = self._get_teacher(discipline.discipline_id, discipline.lessons_in_week, exclude_teachers=exclude_teachers)
                     if teacher is None and consider_teacher_constraints:
                         consider_teacher_constraints = False
                         exclude_teachers = []
                     elif teacher is None:
-                        print(self.lessons)
                         disc = Discipline.objects.get(id=discipline.discipline_id)
-                        return f'Не хватает преподавателей для дисциплины {disc.title}'
+                        print(f'Не хватает преподавателей для дисциплины {disc.title}')
+                        discipline.lessons_in_week = 0
+                        education_plan.at[discipline.name, :] = discipline
+                        continue
                     lesson_times = self._choose_lesson_positions(teacher, group, discipline.lessons_in_week, consider_teacher_constraints=consider_teacher_constraints)
                     exclude_teachers.append(teacher.id)
                 exclude_lessons = []
+                if teacher is None:
+                    continue
                 while discipline.lessons_in_week != 0:
                     lecture_halls = self._choose_lecture_halls(group, teacher.id, lesson_times, discipline.discipline_id)
                     for lecture_hall, day_of_week, lesson in lecture_halls:
@@ -297,10 +301,12 @@ class Algorythm():
                         f' {teacher.first_name} {teacher.last_name}'
                         f' для группы {group.code}'
                         f' из-за нехватки аудиторий типа {disc.prof_type}')
+                        discipline.lessons_in_week = 0
+                        education_plan.at[discipline.name, :] = discipline
                         break
                 education_plan.at[discipline.name, :] = discipline
                 self.teachers.at[teacher.name, 'total_hours'] -= disc_hours
-                    
+            self.education_plan.loc[self.education_plan.group_id==group.id] = education_plan
         print(self.lessons)
         return self.lessons
 

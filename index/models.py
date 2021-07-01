@@ -36,11 +36,12 @@ class Discipline(models.Model):
         (TYPE_LAB, 'Лаб. работа'),
     ]
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=256)
     prof_type = models.CharField(max_length=1, choices=PROF_TYPES, default=PROF_TYPE_SIMPLE)
     constraints = models.ForeignKey(ConstraintCollection, on_delete=models.PROTECT)
     type = models.CharField(max_length=2, choices=TYPES, default=TYPE_LECTION)
-    # code = models.CharField(max_length=100)
+    short_name = models.CharField(max_length=8)
+
 
 class Building(models.Model):
     name = models.CharField(max_length=128)
@@ -50,21 +51,6 @@ class Building(models.Model):
 
 
 class Teacher(models.Model):
-
-    # BUILD_VDNH = 'V'
-    # BUILD_AUTAZ = 'A'
-    # BUILD_ELECTRO = 'E'
-    # BUILD_PRYANIKI = 'P'
-    # BUILD_SADOVAYA = 'S'
-
-    # BUILDINGS = [
-    #     (BUILD_VDNH, 'ул. Павла Корчагина'),
-    #     (BUILD_AUTAZ, 'ул. Автозаводская'),
-    #     (BUILD_ELECTRO, 'ул. Большая Семеновская'),
-    #     (BUILD_PRYANIKI, 'ул. Прянишникова'),
-    #     (BUILD_SADOVAYA, 'ул. Садовая-Спасская'),
-    # ]
-
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50)
@@ -81,12 +67,6 @@ class TeacherLessonConstraint(models.Model):
     lesson = models.IntegerField()
     day_of_week = models.IntegerField()
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='constraints')
-
-
-# class TeacherBuildingConstraint(models.Model):
-#     building = models.ForeignKey(Building, on_delete=models.PROTECT)
-#     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-#     ordering = models.IntegerField()
 
 
 class TrainingDirection(models.Model):

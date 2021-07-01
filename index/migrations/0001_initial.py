@@ -52,6 +52,7 @@ class Migration(migrations.Migration):
                 ('prof_type', models.CharField(choices=[('S', 'Обычная'), ('C', 'Компьютерная'), ('D', 'Дизайн'), ('L', 'Лаборатория'), ('M', 'Мастерская')], default='S', max_length=1)),
                 ('type', models.CharField(choices=[('L', 'Лекция'), ('P', 'Практика'), ('LB', 'Лаб. работа')], default='L', max_length=2)),
                 ('constraints', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='index.ConstraintCollection')),
+                ('short_name', models.CharField(max_length=8)),
             ],
         ),
         migrations.CreateModel(

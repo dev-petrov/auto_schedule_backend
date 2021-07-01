@@ -1,10 +1,12 @@
+from index.education_plan.utils import upload_plan
 from index.models import *
 import json
 import random
 import codecs
 from index.models import ConstraintCollection
 from django.contrib.auth.models import User
-from algo.algov1 import Algorythm
+from django.db import transaction
+from algo.algov2 import AlgoV2
 '''
 Модуль для заполнения базы данных тестовыми данными.
 
@@ -44,17 +46,19 @@ from algo.algov1 import Algorythm
 path = 'scripts/data.json'
 
 def main():
-    set_disciplines()
-    set_buildings()
-    set_teachers()
-    set_training_directions()
-    set_flows()
-    set_groups()
-    set_education_plans()
-    set_lecture_halls()
-    set_lessons()
-    User.objects.create_superuser('admin', email='admin@easytable.site', password='encrypted_pass')
-    print('Admin login: admin; admin pass: encrypted_pass')
+    with transaction.atomic():
+        set_disciplines()
+        set_buildings()
+        set_teachers()
+        set_training_directions()
+        set_flows()
+        set_groups()
+        # set_education_plans()
+        set_lecture_halls()
+        upload_plan('scripts/plan.xlsx', {'type': 'A'})
+        set_lessons()
+        User.objects.create_superuser('admin', email='admin@netproj.ru', password='1234')
+        print('Admin login: admin; admin pass: 1234')
 
 def set_buildings():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
@@ -63,14 +67,16 @@ def set_buildings():
             Building.objects.create(
                 name=d['name'],
                 code=d['code'],
+                primary_color=d['primary_color'],
+                secondary_color=d['secondary_color'],
             )
 
 def set_disciplines():
     with codecs.open(path, 'r', 'utf_8_sig') as f:
         data = json.loads(f.read())
         for d in data['Discipline']:
-            Discipline.objects.create(title=d['title'], prof_type=d['prof_type'],type=Discipline.TYPES[random.randint(0, len(Discipline.TYPES) - 1)][0],
-            constraints_id=random.randint(1,4))
+            Discipline.objects.create(title=d['title'], type=d['type'], prof_type=d['prof_type'],
+            constraints_id=random.randint(1,4), short_name=d['short_name'])
 
 
 def set_teachers():
@@ -81,7 +87,7 @@ def set_teachers():
              middle_name=d['middle_name'], total_hours=d['total_hours'])
             for day, constraints in d['constraints']['day_constraints'].items():
                 for i, available in enumerate(constraints):
-                    if available:
+                    if not available:
                         TeacherLessonConstraint.objects.create(
                             lesson=i + 1,
                             day_of_week=day,
@@ -102,7 +108,7 @@ def set_training_directions():
             )
             for day, constraints in d['constraints']['day_constraints'].items():
                 for i, available in enumerate(constraints):
-                    if available:
+                    if not available:
                         LessonTrainingDirectionConstraint.objects.create(
                             lesson=i + 1,
                             day_of_week=day,
@@ -132,19 +138,17 @@ def set_groups():
 
 def set_education_plans():
     disciplines = list(Discipline.objects.all())
-    count_of_lessons = [1, 2, 3]
-    education_plans = []
+    count_of_lessons = [1, 2]
     for group in Group.objects.all():
-        for i in range(random.randint(5, 7)):
+        for i in range(random.randint(3, 5)):
             discipline = disciplines[random.randint(0, len(disciplines) - 1)]
-            education_plans.append(
-                EducationPlan(
-                    lessons_in_week=count_of_lessons[random.randint(0, 2)],
-                    discipline=discipline,
-                    group=group,
-                )
+            EducationPlan.objects.update_or_create(
+                discipline=discipline,
+                group=group,
+                defaults={
+                    'lessons_in_week': count_of_lessons[random.randint(0, 1)],
+                }
             )
-    EducationPlan.objects.bulk_create(education_plans)
 
 
 def set_lecture_halls():
@@ -159,7 +163,7 @@ def set_lecture_halls():
 
 
 def set_lessons():
-    a = Algorythm()
+    a = AlgoV2()
     schedule = a.create_schedule()
     Lesson.objects.bulk_create(
         Lesson(**row)
